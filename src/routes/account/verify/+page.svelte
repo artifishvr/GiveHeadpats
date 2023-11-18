@@ -19,4 +19,5 @@
         );
     });
 </script>
+
 <h1>Account Verified?</h1>

@@ -16,7 +16,6 @@ client
 
 export async function POST({ request }) {
 	const data = await request.json();
-	console.log(data);
 
 	const database = await databases.listDocuments(
 		env.PUBLIC_HEADPATDB,
