@@ -1,4 +1,4 @@
-FROM node:lts AS build
+FROM node AS build
 WORKDIR /build
 
 RUN npm -g install pnpm
