@@ -1,6 +1,8 @@
 FROM node:lts AS build
 WORKDIR /build
 
+RUN npm -g install pnpm
+
 COPY . .
 
 RUN pnpm install --frozen-lockfile
