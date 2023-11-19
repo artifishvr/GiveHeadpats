@@ -1,4 +1,4 @@
-import { Client, Databases, Query } from 'node-appwrite';
+import { Client, Databases, Query, ID } from 'node-appwrite';
 import { env } from '$env/dynamic/public';
 import { env as privenv } from '$env/dynamic/private';
 
@@ -19,19 +19,27 @@ export async function POST({ request }) {
 
 	const database = await databases.listDocuments(
 		env.PUBLIC_HEADPATDB,
-		env.PUBLIC_COLLECTION_HEADPATS,
+		env.PUBLIC_COLLECTION_HEADPATLIST,
 		[
-			Query.equal('user', data.user)
+			Query.equal('headpatted', data.user)
 		]
 	);
 
-	if (database.documents.length == 0) return text('No user found.');
-
-	databases.updateDocument(env.PUBLIC_HEADPATDB, env.PUBLIC_COLLECTION_HEADPATS, database.documents[0].$id, {
-		'headpatcount': database.documents[0].headpatcount + 1
+	let totalpats = 0;
+	database.documents.forEach(document => {
+		console.log(document);
+		totalpats += document.count;
 	});
 
-	return json(database.documents[0].headpatcount + 1);
+	databases.createDocument(env.PUBLIC_HEADPATDB, env.PUBLIC_COLLECTION_HEADPATLIST, ID.unique(), {
+		headpatted: data.user,
+		actor: data.actor,
+		message: data.message,
+		count: data.patcount,
+	});
+
+
+	return json(totalpats + data.patcount);
 }
 
 export async function fallback({ request }) {

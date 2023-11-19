@@ -3,24 +3,22 @@ import { databases } from '$lib/appwrite';
 import { env } from '$env/dynamic/public';
 
 export async function load({ params }) {
-	const promise = await databases.listDocuments(
+	const database = await databases.listDocuments(
 		env.PUBLIC_HEADPATDB,
-		env.PUBLIC_COLLECTION_HEADPATS,
+		env.PUBLIC_COLLECTION_HEADPATLIST,
 		[
-			Query.equal('user', params.user)
+			Query.equal('headpatted', params.user)
 		]
 	);
 
-	if (promise.documents.length === 0) {
-		return {
-			status: 404,
-			user: 'Not found',
-			headpats: 'Not found'
-		};
-	}
+	let totalpats = 0;
+	database.documents.forEach(document => {
+		totalpats += document.count;
+	});
 
 	return {
-		headpats: promise.documents[0].headpatcount,
-		user: params.user
+		headpats: totalpats,
+		user: params.user,
+		allpats: database.documents,
 	}
 };
