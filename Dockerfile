@@ -1,16 +1,10 @@
-FROM node AS build
-WORKDIR /build
-
-RUN npm -g install pnpm
-
-COPY . .
-
-RUN pnpm install --frozen-lockfile
-RUN pnpm run build
-
 FROM node:lts-alpine
 WORKDIR /app
 
-COPY --from=build /build/.svelte-kit/adapter-node /app
+COPY build /app
+
+RUN echo '{ "type": "module" }' > package.json
 
 CMD ["node", "index.js"]
+
+EXPOSE 3000
