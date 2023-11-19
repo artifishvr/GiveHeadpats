@@ -20,8 +20,8 @@
 </div>
 
 <div class="mb-6 max-w-sm">
-    <Label for="password" class="block mb-2">Password</Label>
-    <Input id="password" placeholder="gimmeheadpats" bind:value={password} />
+    <Label for="password" type="email" class="block mb-2">Password</Label>
+    <Input id="password" type="password" placeholder="gimmeheadpats" bind:value={password} />
 </div>
 
 <Button color="dark" on:click={() => login(email, password)}>Login</Button>

@@ -27,12 +27,12 @@
 
 <div class="mb-6 max-w-sm">
     <Label for="email" class="block mb-2">Email</Label>
-    <Input id="email" placeholder="uwu@example.com" bind:value={email} />
+    <Input id="email" type="email" placeholder="uwu@example.com" bind:value={email} />
 </div>
 
 <div class="mb-6 max-w-sm">
     <Label for="password" class="block mb-2">Password</Label>
-    <Input id="password" placeholder="gimmeheadpats" bind:value={password} />
+    <Input id="password" type="password" placeholder="gimmeheadpats" bind:value={password} />
 </div>
 
 <Button

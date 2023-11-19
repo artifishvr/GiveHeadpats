@@ -34,7 +34,7 @@
     </NavBrand>
     <NavHamburger />
     <NavUl>
-        {#if loggedIn}
+        {#if loggedIn.user}
             <NavLi href="/{loggedIn.user}">My Page</NavLi>
             <NavLi href="/account">Account</NavLi>
             <NavLi
