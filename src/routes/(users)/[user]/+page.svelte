@@ -1,7 +1,7 @@
 <script>
 	import { Heading, P, Button, Avatar, Input, Label, Activity, ActivityItem } from 'flowbite-svelte';
 	import { avatars, account } from '$lib/appwrite';
-	import relativeDate from 'relative-date';
+	import relativeDate from '$lib/relativeDate';
 
 	export let data;
 
