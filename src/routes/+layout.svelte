@@ -21,7 +21,7 @@
 
 <Navbar class="drop-shadow-sm">
     <NavBrand href="/">
-        <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Donate Headpats!</span>
+        <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">give headpats</span>
     </NavBrand>
     <NavHamburger />
     <NavUl>
@@ -41,6 +41,6 @@
     </NavUl>
 </Navbar>
 
-<div class="p-4 md:p-8 bg-neutral-50">
+<div class="p-4 md:p-8 bg-neutral-50 h-100 h-screen">
     <slot />
 </div>
