@@ -1,5 +1,5 @@
 <script>
-	import { Heading, P, Button, Avatar, Input, Label, Activity, ActivityItem } from 'flowbite-svelte';
+	import { Heading, Button, Avatar, Input, Label, Activity, ActivityItem } from 'flowbite-svelte';
 	import { avatars, account } from '$lib/appwrite';
 	import relativeDate from '$lib/relativeDate';
 
@@ -30,6 +30,7 @@
 	let activities = [];
 
 	data.allpats.forEach((pat) => {
+		if (activities.length > 5) return;
 		activities.push({
 			title: `${pat.actor} gave ${pat.count} headpat${pat.count > 1 ? 's' : ''}`,
 			date: relativeDate(new Date(pat.$createdAt)),
@@ -71,7 +72,7 @@
 	</div>
 	<div class="bg-white p-4 rounded-lg drop-shadow-md">
 		<div class="">
-			<Heading tag="h3" class="mb-4" customSize="text-1xl"><b>Send a Headpat!</b></Heading>
+			<Heading tag="h3" class="mb-4" customSize="text-1xl"><b>Send headpats</b></Heading>
 			<div class="flex">
 				<Heading tag="h3" class="mb-4" customSize="text-md">Headpats</Heading>
 				<Button

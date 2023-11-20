@@ -27,7 +27,6 @@ export async function POST({ request }) {
 
 	let totalpats = 0;
 	database.documents.forEach(document => {
-		console.log(document);
 		totalpats += document.count;
 	});
 
