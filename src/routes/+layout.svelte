@@ -1,13 +1,7 @@
 <script>
-    import "../app.postcss";
-    import {
-        Navbar,
-        NavBrand,
-        NavLi,
-        NavUl,
-        NavHamburger,
-    } from "flowbite-svelte";
-    import { account } from "$lib/appwrite";
+    import '../app.postcss';
+    import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
+    import { account } from '$lib/appwrite';
 
     let loggedIn = {};
     loggedIn.status = false;
@@ -25,12 +19,9 @@
     );
 </script>
 
-<Navbar>
+<Navbar class="drop-shadow-sm">
     <NavBrand href="/">
-        <span
-            class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
-            >Donate Headpats!</span
-        >
+        <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">give headpats</span>
     </NavBrand>
     <NavHamburger />
     <NavUl>
@@ -39,11 +30,10 @@
             <NavLi href="/account">Account</NavLi>
             <NavLi
                 on:click={async () => {
-                    await account.deleteSession("current");
+                    await account.deleteSession('current');
                     loggedIn = false;
                 }}
-                href="#">Log Out</NavLi
-            >
+                href="#">Log Out</NavLi>
         {:else}
             <NavLi href="/account/login">Log In</NavLi>
             <NavLi href="/account/signup">Sign Up</NavLi>
@@ -51,6 +41,6 @@
     </NavUl>
 </Navbar>
 
-<div class="p-4 md:p-8">
+<div class="p-4 md:p-8 bg-neutral-50 h-100 h-screen">
     <slot />
 </div>
