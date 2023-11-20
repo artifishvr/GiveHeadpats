@@ -1,8 +1,9 @@
 <script>
-	import { Heading, Button, Avatar, Input, Label, Activity, ActivityItem } from 'flowbite-svelte';
+	import { Heading, Button, Avatar, Input, Label, Activity, ActivityItem, Modal } from 'flowbite-svelte';
 	import { avatars, account } from '$lib/appwrite';
 	import relativeDate from '$lib/relativeDate';
 	import { onMount } from 'svelte';
+	import { Turnstile } from 'svelte-turnstile';
 
 	export let data;
 
@@ -12,6 +13,8 @@
 	let patcount = 1;
 
 	const promise = account.get();
+
+	let headpatModal = false;
 
 	let actor = '';
 
@@ -104,7 +107,7 @@
 			</div>
 			<Label for="message" class="mb-2">Message (Optional)</Label>
 			<Input class="mb-3" id="message" placeholder="You cute!" bind:value={message} />
-			<Button id="submit-button" on:click={patpat} color="purple">Pat!!</Button>
+			<Button id="submit-button" on:click={() => (headpatModal = true)} color="purple">Pat!!</Button>
 		</div>
 	</div>
 	<div class="bg-white p-4 rounded-lg drop-shadow-md">
@@ -116,3 +119,11 @@
 		</div>
 	</div>
 </div>
+
+<Modal title="Confirm Headpat" bind:open={headpatModal} autoclose outsideclose>
+	<p>Are you sure you want to headpat {data.user}?</p>
+	<Turnstile siteKey="0x4AAAAAAANZEO8eXr3R3FWN" theme="light" />
+	<svelte:fragment slot="footer">
+		<Button on:click={() => patpat()}>I accept</Button>
+	</svelte:fragment>
+</Modal>
