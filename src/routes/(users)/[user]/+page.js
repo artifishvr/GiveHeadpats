@@ -17,9 +17,19 @@ export async function load({ params }) {
 		totalpats += document.count;
 	});
 
+	if (database.documents.length == 0) {
+		return {
+			headpats: 0,
+			user: "User not found",
+			allpats: [],
+			status: 404,
+		}
+	}
+
 	return {
 		headpats: totalpats,
 		user: params.user,
 		allpats: database.documents,
+		status: 200,
 	}
 };

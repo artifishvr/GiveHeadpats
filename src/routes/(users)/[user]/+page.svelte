@@ -2,6 +2,7 @@
 	import { Heading, Button, Avatar, Input, Label, Activity, ActivityItem } from 'flowbite-svelte';
 	import { avatars, account } from '$lib/appwrite';
 	import relativeDate from '$lib/relativeDate';
+	import { onMount } from 'svelte';
 
 	export let data;
 
@@ -31,6 +32,8 @@
 
 	data.allpats.forEach((pat) => {
 		if (activities.length > 5) return;
+		if (pat.actor == 'system') return;
+
 		activities.push({
 			title: `${pat.actor} gave ${pat.count} headpat${pat.count > 1 ? 's' : ''}`,
 			date: relativeDate(new Date(pat.$createdAt)),
@@ -40,6 +43,7 @@
 	});
 
 	async function patpat() {
+		if (data.status !== 200) return;
 		const response = await fetch('/api/headpat', {
 			method: 'POST',
 			body: JSON.stringify({
@@ -57,6 +61,13 @@
 	}
 
 	let avatarlink = avatars.getInitials(data.user);
+
+	onMount(async () => {
+		if (data.status == 404) {
+			document.getElementById('main-interactive').innerHTML = '404';
+			document.getElementById('submit-button').disabled = true; // disable submit button
+		}
+	});
 </script>
 
 <div class="bg-white gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 p-4 rounded-lg drop-shadow-md mb-10">
@@ -65,7 +76,7 @@
 	<Heading tag="h2" class="mb-4" customSize="text-1xl md:text-1xl lg:text-1xl">Has earned {headpats} headpats</Heading>
 </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-" id="main-interactive">
 	<div class="bg-white p-4 rounded-lg drop-shadow-md">
 		<b>Headpat {data.user}!</b><br />
 		description and stuff go here
@@ -93,7 +104,7 @@
 			</div>
 			<Label for="message" class="mb-2">Message (Optional)</Label>
 			<Input class="mb-3" id="message" placeholder="You cute!" bind:value={message} />
-			<Button on:click={patpat} color="purple">Pat!!</Button>
+			<Button id="submit-button" on:click={patpat} color="purple">Pat!!</Button>
 		</div>
 	</div>
 	<div class="bg-white p-4 rounded-lg drop-shadow-md">

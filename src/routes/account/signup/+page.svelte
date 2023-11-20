@@ -42,8 +42,17 @@
 
                 await login(email, password);
 
-                await databases.createDocument(env.PUBLIC_HEADPATDB, env.PUBLIC_COLLECTION_HEADPATS, ID.unique(), {
-                    user: name,
+                await fetch('/api/headpat', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        user: name,
+                        actor: 'system',
+                        message: 'Welcome!',
+                        patcount: 1,
+                    }),
+                    headers: {
+                        'content-type': 'application/json',
+                    },
                 });
             }}>Register</Button>
 
