@@ -7,7 +7,8 @@ export async function load({ params }) {
 		env.PUBLIC_HEADPATDB,
 		env.PUBLIC_COLLECTION_HEADPATLIST,
 		[
-			Query.equal('headpatted', params.user)
+			Query.equal('headpatted', params.user),
+			Query.orderDesc("$createdAt")
 		]
 	);
 
