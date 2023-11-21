@@ -82,8 +82,12 @@
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-" id="main-interactive">
 	<div class="bg-white p-4 rounded-lg drop-shadow-md">
-		<b>Headpat {data.user}!</b><br />
-		description and stuff go here
+		<Heading tag="h3" class="mb-4" customSize="text-1xl"><b>Feed</b></Heading>
+		<div class="pl-5">
+			<Activity>
+				<ActivityItem {activities} />
+			</Activity>
+		</div>
 	</div>
 	<div class="bg-white p-4 rounded-lg drop-shadow-md">
 		<div class="">
@@ -109,14 +113,6 @@
 			<Label for="message" class="mb-2">Message (Optional)</Label>
 			<Input class="mb-3" id="message" placeholder="You cute!" bind:value={message} />
 			<Button id="submit-button" on:click={() => (headpatModal = true)} color="purple">Pat!!</Button>
-		</div>
-	</div>
-	<div class="bg-white p-4 rounded-lg drop-shadow-md">
-		<Heading tag="h3" class="mb-4" customSize="text-1xl"><b>Feed</b></Heading>
-		<div class="pl-5">
-			<Activity>
-				<ActivityItem {activities} />
-			</Activity>
 		</div>
 	</div>
 </div>

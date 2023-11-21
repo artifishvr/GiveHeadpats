@@ -41,6 +41,6 @@
     </NavUl>
 </Navbar>
 
-<div class="p-4 md:p-8 bg-neutral-50 h-100 min-h-screen">
+<div class="p-4 md:p-8 bg-white h-100 min-h-screen">
     <slot />
 </div>
