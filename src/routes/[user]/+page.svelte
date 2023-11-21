@@ -118,5 +118,12 @@
 </div>
 
 <Modal title="Send Headpat" bind:open={headpatModal} outsideclose>
-	<button use:press={{ timeframe: 3000, triggerBeforeFinished: true }} on:press={patpat}>Hold to Pat</button>
+	<div class="flex items-center justify-center">
+		<!-- svelte-ignore a11y-media-has-caption -->
+		<video src="pat.mp4" loop muted autoplay />
+	</div>
+	<button
+		class="text-center font-medium focus-within:ring-4 focus-within:outline-none inline-flex items-center justify-center px-5 py-2.5 text-sm text-white bg-purple-700 hover:bg-purple-800 dark:bg-purple-600 dark:hover:bg-purple-700 focus-within:ring-purple-300 dark:focus-within:ring-purple-900 rounded-lg"
+		use:press={{ timeframe: 3000, triggerBeforeFinished: true }}
+		on:press={patpat}>Hold to Headpat</button>
 </Modal>
