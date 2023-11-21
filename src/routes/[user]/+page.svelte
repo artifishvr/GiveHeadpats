@@ -3,7 +3,7 @@
 	import { avatars, account } from '$lib/appwrite';
 	import relativeDate from '$lib/relativeDate';
 	import { onMount } from 'svelte';
-	import { Turnstile } from 'svelte-turnstile';
+	import { press } from 'svelte-gestures';
 
 	export let data;
 
@@ -46,6 +46,7 @@
 	});
 
 	async function patpat() {
+		headpatModal = false;
 		if (data.status !== 200) return;
 		const response = await fetch('/api/headpat', {
 			method: 'POST',
@@ -120,10 +121,6 @@
 	</div>
 </div>
 
-<Modal title="Confirm Headpat" bind:open={headpatModal} autoclose outsideclose>
-	<p>Are you sure you want to headpat {data.user}?</p>
-	<Turnstile siteKey="0x4AAAAAAANZEO8eXr3R3FWN" theme="light" />
-	<svelte:fragment slot="footer">
-		<Button on:click={() => patpat()}>I accept</Button>
-	</svelte:fragment>
+<Modal title="Send Headpat" bind:open={headpatModal} outsideclose>
+	<button use:press={{ timeframe: 3000, triggerBeforeFinished: true }} on:press={patpat}>Hold to Pat</button>
 </Modal>
