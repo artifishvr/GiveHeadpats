@@ -15,7 +15,7 @@ What if ko-fi, but for headpats?
 
 - Node.js
 - pnpm
-- Appwrite Self
+- Appwrite Self Hosted or Cloud
 
 ### Getting Started
 
