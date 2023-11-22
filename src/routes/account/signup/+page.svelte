@@ -1,8 +1,7 @@
 <script>
     import { Label, Input, P, Button } from 'flowbite-svelte';
 
-    import { account, databases } from '$lib/appwrite';
-    import { env } from '$env/dynamic/public';
+    import { account } from '$lib/appwrite';
     import { ID } from 'appwrite';
 
     let email = '';
@@ -42,13 +41,11 @@
 
                 await login(email, password);
 
-                await fetch('/api/headpat', {
+                await fetch('/api/setupaccount', {
                     method: 'POST',
                     body: JSON.stringify({
                         user: name,
-                        actor: 'system',
-                        message: 'Welcome!',
-                        patcount: 1,
+                        userID: loggedInUser.$id,
                     }),
                     headers: {
                         'content-type': 'application/json',

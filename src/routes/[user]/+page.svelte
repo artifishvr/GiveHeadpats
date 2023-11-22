@@ -12,13 +12,13 @@
 	let message = '';
 	let patcount = 1;
 
-	const promise = account.get();
+	const actorAccount = account.get();
 
 	let headpatModal = false;
 
 	let actor = '';
 
-	promise.then(
+	actorAccount.then(
 		function (response) {
 			if (response.name) {
 				actor = response.name;
@@ -34,9 +34,6 @@
 	let activities = [];
 
 	data.allpats.forEach((pat) => {
-		if (activities.length > 5) return;
-		if (pat.actor == 'system') return;
-
 		activities.push({
 			title: `${pat.actor} gave ${pat.count} headpat${pat.count > 1 ? 's' : ''}`,
 			date: relativeDate(new Date(pat.$createdAt)),
@@ -54,7 +51,7 @@
 				user: data.user,
 				actor: actor,
 				message: message,
-				patcount: 1,
+				patcount: patcount,
 			}),
 			headers: {
 				'content-type': 'application/json',
@@ -77,7 +74,8 @@
 <div class="bg-white gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 p-4 rounded-lg drop-shadow-md mb-10">
 	<Avatar src={avatarlink} size="lg" />
 	<Heading tag="h1" class="mb-4 mt-4" customSize="text-2xl md:text-3xl lg:text-3xl">{data.user}</Heading>
-	<Heading tag="h2" class="mb-4" customSize="text-1xl md:text-1xl lg:text-1xl">Has earned {headpats} headpats</Heading>
+	<Heading tag="h2" class="mb-4" customSize="text-1xl md:text-1xl lg:text-1xl"
+		>Has earned {headpats} headpat{headpats > 1 ? 's' : ''}</Heading>
 </div>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-" id="main-interactive">
@@ -101,7 +99,7 @@
 					on:click={() => {
 						patcount -= 1;
 					}}>-</Button>
-				<Input id="pat-count" class="mb-6 w-12 text-center rounded-full" placeholder="1" bind:value={patcount} />
+				<Input id="pat-count" class="mb-6 w-12 text-center rounded-full" placeholder="1" bind:value={patcount} readonly />
 				<Button
 					class="w-10 h-10 mx-2"
 					color="dark"
@@ -117,7 +115,7 @@
 	</div>
 </div>
 
-<Modal title="Send Headpat" bind:open={headpatModal} outsideclose>
+<Modal title="Send Headpat" bind:open={headpatModal} outsideclose class="text-center">
 	<div class="flex items-center justify-center">
 		<!-- svelte-ignore a11y-media-has-caption -->
 		<video src="pat.mp4" loop muted autoplay />
