@@ -56,5 +56,10 @@
         <P class="mt-6 mb-6 text-md lg:text-lg text-green-700">
             {loggedInUser ? `Signed up as ${loggedInUser.name}! Check your email to verify your account.` : ''}
         </P>
+
+        <P class="mt-6 mb-6 text-md lg:text-ms">
+            By signing up, you agree to our <a href="/account/tos" class="text-blue-600 hover:text-blue-800">Terms of Service</a> and
+            <a href="/account/privacy" class="text-blue-600 hover:text-blue-800">Privacy Policy</a>.
+        </P>
     </div>
 </div>
