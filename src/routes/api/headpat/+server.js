@@ -2,7 +2,7 @@ import { Client, Databases, Query, ID } from 'node-appwrite';
 import { env } from '$env/dynamic/public';
 import { env as privenv } from '$env/dynamic/private';
 
-import { json, text } from '@sveltejs/kit';
+import { text } from '@sveltejs/kit';
 
 const client = new Client();
 
@@ -26,6 +26,14 @@ export async function POST({ request }) {
 		]
 	);
 
+	if (data.user == data.actor) {
+		return new Response(JSON.stringify({
+			status: 400,
+			response: "You can't headpat yourself!"
+		}), {
+			headers: { 'Content-Type': 'application/json' }
+		});
+	}
 	console.log(data);
 
 	await databases.createDocument(env.PUBLIC_HEADPATDB, env.PUBLIC_COLLECTION_HEADPATLIST, ID.unique(), {
@@ -40,7 +48,12 @@ export async function POST({ request }) {
 	});
 
 
-	return json(userdata.documents[0].PatsReceived + data.patcount);
+	return new Response(JSON.stringify({
+		status: 200,
+		response: userdata.documents[0].PatsReceived + data.patcount
+	}), {
+		headers: { 'Content-Type': 'application/json' }
+	});
 }
 
 export async function fallback({ request }) {

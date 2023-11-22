@@ -58,7 +58,11 @@
 			},
 		});
 
-		headpats = await response.json();
+		let responseJSON = await response.json();
+
+		if (responseJSON.status !== 200) return alert(responseJSON.response);
+
+		headpats = responseJSON.response;
 	}
 
 	let avatarlink = avatars.getInitials(data.user);
