@@ -2,6 +2,8 @@
     import '../app.postcss';
     import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
     import { account } from '$lib/appwrite';
+    import { dev } from '$app/environment';
+    import { inject } from '@vercel/analytics';
 
     let loggedIn = {};
     loggedIn.status = false;
@@ -17,6 +19,8 @@
             loggedIn.status = false;
         }
     );
+
+    inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 <svelte:head>

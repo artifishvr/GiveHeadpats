@@ -22,6 +22,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@vercel/analytics": "^1.1.1",
     "appwrite": "^13.0.0",
     "node-appwrite": "^11.0.0",
     "svelte-gestures": "^1.5.2"

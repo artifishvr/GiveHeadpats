@@ -43,6 +43,15 @@
 </section>
 
 <section>
+    <h3>6. Analytics</h3>
+    <p>
+        We make use of Vercel Analytics to measure website traffic to improve user experience. You can read their privacy policy <a
+            href="https://vercel.com/docs/analytics/privacy-policy"
+            target="_blank">here</a>
+    </p>
+</section>
+
+<section>
     <h2>6. Changes to Privacy Policy</h2>
     <p>We reserve the right to modify or revise this Privacy Policy at any time.</p>
 </section>
