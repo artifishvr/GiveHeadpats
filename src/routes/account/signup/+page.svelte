@@ -53,6 +53,8 @@
                 });
             }}>Register</Button>
 
+        <Button class="!bg-[#5865F2]" on:click={() => account.createOAuth2Session('discord')}>Login with Discord</Button>
+
         <P class="mt-6 mb-6 text-md lg:text-lg text-green-700">
             {loggedInUser ? `Signed up as ${loggedInUser.name}! Check your email to verify your account.` : ''}
         </P>
