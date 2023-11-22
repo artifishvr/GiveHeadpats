@@ -19,6 +19,10 @@
     );
 </script>
 
+<svelte:head>
+    <title>give headpats</title>
+</svelte:head>
+
 <Navbar class="drop-shadow-sm">
     <NavBrand href="/">
         <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">give headpats</span>

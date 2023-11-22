@@ -75,6 +75,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>headpat {data.user}</title>
+</svelte:head>
+
 <div class="bg-white gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 p-4 rounded-lg drop-shadow-md mb-10">
 	<Avatar src={avatarlink} size="lg" />
 	<Heading tag="h1" class="mb-4 mt-4" customSize="text-2xl md:text-3xl lg:text-3xl">{data.user}</Heading>
@@ -83,7 +87,7 @@
 </div>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-" id="main-interactive">
-	<div class="bg-white p-4 rounded-lg drop-shadow-md">
+	<div class="bg-white p-4 rounded-lg drop-shadow-sm">
 		<Heading tag="h3" class="mb-4" customSize="text-1xl"><b>Feed</b></Heading>
 		<div class="pl-5">
 			<Activity>
@@ -91,7 +95,7 @@
 			</Activity>
 		</div>
 	</div>
-	<div class="bg-white p-4 rounded-lg drop-shadow-md">
+	<div class="bg-white p-4 rounded-lg drop-shadow-sm">
 		<div class="">
 			<Heading tag="h3" class="mb-4" customSize="text-1xl"><b>Send headpats</b></Heading>
 			<div class="flex">

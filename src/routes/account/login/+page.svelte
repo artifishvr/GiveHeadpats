@@ -14,6 +14,10 @@
     }
 </script>
 
+<svelte:head>
+    <title>login to give headpats</title>
+</svelte:head>
+
 <div class="flex justify-center items-center">
     <div class="bg-white rounded-lg p-6 max-w-lg sm:min-w-[50%] min-w-[90%]">
         <div class="mb-6">
