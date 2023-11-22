@@ -58,7 +58,8 @@
         </P>
 
         <P class="mt-6 mb-6 text-md lg:text-ms">
-            By signing up, you agree to our <a href="/account/tos">Terms of Service</a> and <a href="/account/privacy">Privacy Policy</a>.
+            By signing up, you agree to our <a href="/account/tos" class="text-blue-600 hover:text-blue-800">Terms of Service</a> and
+            <a href="/account/privacy" class="text-blue-600 hover:text-blue-800">Privacy Policy</a>.
         </P>
     </div>
 </div>
