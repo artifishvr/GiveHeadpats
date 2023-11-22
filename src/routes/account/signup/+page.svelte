@@ -6,7 +6,7 @@
 
     let email = '';
     let password = '';
-    let name = '';
+    let username = '';
 
     let loggedInUser = null;
 
@@ -21,7 +21,7 @@
     <div class="bg-white rounded-lg p-6 max-w-lg sm:min-w-[50%] min-w-[90%]">
         <div class="mb-6">
             <Label for="username" class="block mb-2">Username</Label>
-            <Input id="username" placeholder="areallycuteperson" bind:value={name} />
+            <Input id="username" placeholder="areallycuteperson" bind:value={username} />
         </div>
 
         <div class="mb-6">
@@ -37,14 +37,14 @@
         <Button
             color="dark"
             on:click={async () => {
-                await account.create(ID.unique(), email, password, name);
+                await account.create(ID.unique(), email, password, username.toLowerCase());
 
                 await login(email, password);
 
                 await fetch('/api/setupaccount', {
                     method: 'POST',
                     body: JSON.stringify({
-                        user: name,
+                        user: username.toLowerCase(),
                         userID: loggedInUser.$id,
                     }),
                     headers: {
