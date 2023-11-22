@@ -17,28 +17,30 @@ client
 export async function POST({ request }) {
 	const data = await request.json();
 
-	const database = await databases.listDocuments(
+	const userdata = await databases.listDocuments(
 		env.PUBLIC_HEADPATDB,
-		env.PUBLIC_COLLECTION_HEADPATLIST,
+		env.PUBLIC_COLLECTION_USERDATA,
 		[
-			Query.equal('headpatted', data.user)
+			Query.equal('user', data.user),
+			Query.limit(1),
 		]
 	);
 
-	let totalpats = 0;
-	database.documents.forEach(document => {
-		totalpats += document.count;
-	});
+	console.log(data);
 
-	databases.createDocument(env.PUBLIC_HEADPATDB, env.PUBLIC_COLLECTION_HEADPATLIST, ID.unique(), {
+	await databases.createDocument(env.PUBLIC_HEADPATDB, env.PUBLIC_COLLECTION_HEADPATLIST, ID.unique(), {
 		headpatted: data.user,
 		actor: data.actor,
 		message: data.message,
 		count: data.patcount,
 	});
 
+	await databases.updateDocument(env.PUBLIC_HEADPATDB, env.PUBLIC_COLLECTION_USERDATA, userdata.documents[0].$id, {
+		PatsReceived: userdata.documents[0].PatsReceived + data.patcount
+	});
 
-	return json(totalpats + data.patcount);
+
+	return json(userdata.documents[0].PatsReceived + data.patcount);
 }
 
 export async function fallback({ request }) {

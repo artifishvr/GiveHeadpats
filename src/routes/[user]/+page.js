@@ -3,21 +3,26 @@ import { databases } from '$lib/appwrite';
 import { env } from '$env/dynamic/public';
 
 export async function load({ params }) {
-	const database = await databases.listDocuments(
+	const listdatabase = await databases.listDocuments(
 		env.PUBLIC_HEADPATDB,
 		env.PUBLIC_COLLECTION_HEADPATLIST,
 		[
 			Query.equal('headpatted', params.user),
-			Query.orderDesc("$createdAt")
+			Query.orderDesc("$createdAt"),
+			Query.limit(5),
 		]
 	);
 
-	let totalpats = 0;
-	database.documents.forEach(document => {
-		totalpats += document.count;
-	});
+	const userdata = await databases.listDocuments(
+		env.PUBLIC_HEADPATDB,
+		env.PUBLIC_COLLECTION_USERDATA,
+		[
+			Query.equal('user', params.user),
+			Query.limit(1),
+		]
+	);
 
-	if (database.documents.length == 0) {
+	if (userdata.total == 0) {
 		return {
 			headpats: 0,
 			user: "User not found",
@@ -27,9 +32,9 @@ export async function load({ params }) {
 	}
 
 	return {
-		headpats: totalpats,
+		headpats: userdata.documents[0].PatsReceived,
 		user: params.user,
-		allpats: database.documents,
+		allpats: listdatabase.documents,
 		status: 200,
 	}
 };
