@@ -1,6 +1,6 @@
 {
   "name": "headpats",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "vite dev",
@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^2.1.1",
+    "@sveltejs/adapter-vercel": "^3.1.0",
     "@sveltejs/kit": "^1.27.4",
     "autoprefixer": "^10.4.14",
     "flowbite": "^2.1.1",
