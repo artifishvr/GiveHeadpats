@@ -33,6 +33,7 @@
         </div>
 
         <Button color="dark" on:click={() => login(email, password)}>Login</Button>
+        <Button color="secondary" href="/account/forgot">Forgot Password?</Button>
 
         <P class="mt-6 mb-6 text-md lg:text-lg">
             {loggedInUser ? `Welcome back, ${loggedInUser.name}!` : ''}
