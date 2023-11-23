@@ -12,24 +12,28 @@
 	let message = '';
 	let patcount = 1;
 
-	const actorAccount = account.get();
-
 	let headpatModal = false;
 
 	let actor = '';
 
-	actorAccount.then(
-		function (response) {
-			if (response.name) {
-				actor = response.name;
-			} else {
+	try {
+		const actorAccount = account.get();
+		actorAccount.then(
+			function (response) {
+				if (response.name) {
+					actor = response.name;
+				} else {
+					actor = 'Guest';
+				}
+			},
+			function (error) {
 				actor = 'Guest';
-			}
-		},
-		function (error) {
-			actor = 'Guest';
-		},
-	);
+			},
+		);
+	} catch (error) {
+		actor = 'Guest';
+		console.log(error);
+	}
 
 	let activities = [];
 
