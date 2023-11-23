@@ -14,6 +14,7 @@
         await account.createEmailSession(email, password);
         loggedInUser = await account.get();
         await account.createVerification('http://localhost:5173/account/verify');
+        location.reload();
     }
 </script>
 
