@@ -11,6 +11,7 @@
     async function login(email, password) {
         await account.createEmailSession(email, password);
         loggedInUser = await account.get();
+        location.reload();
     }
 </script>
 
