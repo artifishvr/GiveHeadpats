@@ -28,7 +28,7 @@
 		},
 		function (error) {
 			actor = 'Guest';
-		}
+		},
 	);
 
 	let activities = [];
@@ -106,6 +106,9 @@
 					pill
 					on:click={() => {
 						patcount -= 1;
+						if (patcount < 1) {
+							patcount = 1;
+						}
 					}}>-</Button>
 				<Input id="pat-count" class="mb-6 w-12 text-center rounded-full" placeholder="1" bind:value={patcount} readonly />
 				<Button
@@ -114,6 +117,9 @@
 					pill
 					on:click={() => {
 						patcount += 1;
+						if (patcount > 20) {
+							patcount = 20;
+						}
 					}}>+</Button>
 			</div>
 			<Label for="message" class="mb-2">Message (Optional)</Label>
