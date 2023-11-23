@@ -17,19 +17,22 @@
         },
         function (error) {
             loggedIn.status = false;
-        }
+        },
     );
 
     inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 <svelte:head>
-    <title>give headpats</title>
+    <title>Give Headpats</title>
 </svelte:head>
 
 <Navbar class="drop-shadow-sm">
     <NavBrand href="/">
-        <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">give headpats</span>
+        <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Give Headpats</span>
+        <a href="https://github.com/artificialbutter/GiveHeadpats" target="_blank">
+            <span class="self-center ml-2 px-3 py-2 rounded-full bg-red-200 text-red-800 font-semibold">Open Alpha</span>
+        </a>
     </NavBrand>
     <NavHamburger />
     <NavUl>
