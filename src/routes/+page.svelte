@@ -46,6 +46,8 @@
                         Give them a Pat!
                         <ArrowRightOutline class="w-3.5 h-3.5 ml-2" />
                     </Button>
+                {:else}
+                    <Button href="/account/signup">Sign up! <ArrowRightOutline class="w-3.5 h-3.5 ml-2" /></Button>
                 {/if}
             </div>
         {/each}

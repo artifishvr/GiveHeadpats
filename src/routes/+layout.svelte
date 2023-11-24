@@ -31,7 +31,7 @@
     <NavBrand href="/">
         <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Give Headpats</span>
         <a href="https://github.com/artificialbutter/GiveHeadpats" target="_blank">
-            <span class="self-center ml-2 px-3 py-2 rounded-full bg-red-200 text-red-800 font-semibold">Open Alpha</span>
+            <span class="ml-2 px-3 py-2 rounded-full bg-red-200 text-red-800 font-semibold">Open Alpha</span>
         </a>
     </NavBrand>
     <NavHamburger />
