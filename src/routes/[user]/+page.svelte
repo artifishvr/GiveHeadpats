@@ -48,6 +48,15 @@
 	});
 
 	client.subscribe([`databases.${env.PUBLIC_HEADPATDB}.collections.${env.PUBLIC_COLLECTION_HEADPATLIST}.documents.*`], (response) => {
+		if (response.user !== data.user) return;
+		activities.push({
+			title: `${response.actor} gave ${response.patcount} headpat${response.patcount == 1 ? 's' : ''}`,
+			date: 'just now',
+			text: response.message,
+			avatar: avatars.getInitials(response.actor),
+		});
+
+		activities = activities;
 		console.log(response);
 	});
 
