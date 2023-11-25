@@ -4,6 +4,7 @@
 	import relativeDate from '$lib/relativeDate';
 	import { onMount } from 'svelte';
 	import { press } from 'svelte-gestures';
+	import sanitizeHtml from 'sanitize-html';
 
 	export let data;
 
@@ -41,7 +42,7 @@
 		activities.push({
 			title: `${pat.actor} gave ${pat.count} headpat${pat.count > 1 ? 's' : ''}`,
 			date: relativeDate(new Date(pat.$createdAt)),
-			text: pat.message,
+			text: sanitizeHtml(pat.message),
 			avatar: avatars.getInitials(pat.actor),
 		});
 	});
