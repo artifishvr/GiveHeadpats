@@ -14,4 +14,4 @@ client
 	.setProject(env.PUBLIC_PROJECT_ID) // Your project ID
 	;
 
-export { databases, account, avatars };
+export { databases, account, avatars, client };

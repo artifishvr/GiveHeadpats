@@ -1,9 +1,10 @@
 <script>
 	import { Heading, Button, Avatar, Input, Label, Activity, ActivityItem, Modal } from 'flowbite-svelte';
-	import { avatars, account } from '$lib/appwrite';
+	import { client, avatars, account } from '$lib/appwrite';
 	import relativeDate from '$lib/relativeDate';
 	import { onMount } from 'svelte';
 	import { press } from 'svelte-gestures';
+	import { env } from '$env/dynamic/public';
 
 	export let data;
 
@@ -44,6 +45,10 @@
 			text: pat.message,
 			avatar: avatars.getInitials(pat.actor),
 		});
+	});
+
+	client.subscribe([`databases.${env.PUBLIC_HEADPATDB}.collections.${env.PUBLIC_COLLECTION_HEADPATLIST}.documents.*`], (response) => {
+		console.log(response);
 	});
 
 	async function patpat() {
