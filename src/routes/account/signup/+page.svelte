@@ -1,5 +1,6 @@
 <script>
     import { Label, Input, P, Button } from 'flowbite-svelte';
+    import blockedUsernamesJSON from '$lib/blockedUsernames.json';
 
     import { account } from '$lib/appwrite';
     import { ID } from 'appwrite';
@@ -15,6 +16,45 @@
         loggedInUser = await account.get();
         await account.createVerification('https://pat.arti.lol/account/verify');
         location.reload();
+    }
+
+    async function validate() {
+        if (username.length < 3) {
+            alert('Username must be at least 3 characters long.');
+            return false;
+        }
+
+        if (username.length > 20) {
+            alert('Username must be less than 20 characters long.');
+            return false;
+        }
+
+        if (username.match(/^[a-zA-Z0-9_]+$/g) === null) {
+            alert('Username must only contain letters, numbers, and underscores.');
+            return false;
+        }
+
+        if (email.length < 3) {
+            alert('Email must be at least 3 characters long.');
+            return false;
+        }
+
+        if (email.length > 320) {
+            alert('Email must be less than 320 characters long.');
+            return false;
+        }
+
+        if (password.length < 6) {
+            alert('Password must be at least 6 characters long.');
+            return false;
+        }
+
+        if (username.toLowerCase() in blockedUsernamesJSON.usernames) {
+            alert('Username is blocked.');
+            return false;
+        }
+
+        return true;
     }
 </script>
 
@@ -38,6 +78,8 @@
         <Button
             color="dark"
             on:click={async () => {
+                if (!(await validate())) return;
+
                 await account.create(ID.unique(), email, password, username.toLowerCase());
 
                 await login(email, password);
