@@ -2,8 +2,9 @@
     import { Label, Input, P, Button } from 'flowbite-svelte';
     import blockedUsernamesJSON from '$lib/blockedUsernames.json';
 
-    import { account } from '$lib/appwrite';
+    import { account, databases } from '$lib/appwrite';
     import { ID } from 'appwrite';
+    import { env } from '$env/dynamic/public';
 
     let email = '';
     let password = '';
@@ -51,6 +52,17 @@
 
         if (username.toLowerCase() in blockedUsernamesJSON.usernames) {
             alert('Username is blocked.');
+            return false;
+        }
+
+        const userdata = await databases.listDocuments(env.PUBLIC_HEADPATDB, env.PUBLIC_COLLECTION_USERDATA, [
+            Query.equal('user', params.user),
+            Query.limit(1),
+        ]);
+        // i know i shouldn't do this client-side but it's a fix for now ig
+        // if you're thinking about bypassing this, don't. you will only create a broken account for yourself.
+        if (userdata.total !== 0) {
+            alert('Username is taken.');
             return false;
         }
 
