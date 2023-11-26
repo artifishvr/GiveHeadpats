@@ -40,7 +40,8 @@
         {#each mostpatted as patted}
             <div class="bg-white p-4 rounded-lg drop-shadow-sm">
                 <Heading tag="h2" class="mb-4" customSize="text-md font-bold md:text-md lg:text-md">{patted.user}</Heading>
-                <P class="mb-6 text-sm lg:text-sm dark:text-gray-400 text-center">Has received {patted.PatsReceived} pats!</P>
+                <P class="mb-6 text-sm lg:text-sm dark:text-gray-400 text-center"
+                    >Has received {patted.PatsReceived} pat{patted.PatsReceived !== 1 ? 's' : ''}!</P>
                 {#if !patted.hideButton}
                     <Button href={'/' + patted.user}>
                         Give them a Pat!

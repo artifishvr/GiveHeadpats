@@ -40,7 +40,7 @@
 
 	data.allpats.forEach((pat) => {
 		activities.push({
-			title: `${pat.actor} gave ${pat.count} headpat${pat.count > 1 ? 's' : ''}`,
+			title: `${pat.actor} gave ${pat.count} headpat${pat.count !== 1 ? 's' : ''}`,
 			date: relativeDate(new Date(pat.$createdAt)),
 			text: sanitizeHtml(pat.message, {
 				allowedTags: ['b', 'i'],
