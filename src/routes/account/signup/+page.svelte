@@ -56,7 +56,7 @@
         }
 
         const userdata = await databases.listDocuments(env.PUBLIC_HEADPATDB, env.PUBLIC_COLLECTION_USERDATA, [
-            Query.equal('user', params.user),
+            Query.equal('user', username),
             Query.limit(1),
         ]);
         // i know i shouldn't do this client-side but it's a fix for now ig
