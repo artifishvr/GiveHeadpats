@@ -3,7 +3,7 @@
     import blockedUsernamesJSON from '$lib/blockedUsernames.json';
 
     import { account, databases } from '$lib/appwrite';
-    import { ID } from 'appwrite';
+    import { ID, Query } from 'appwrite';
     import { env } from '$env/dynamic/public';
 
     let email = '';
