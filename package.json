@@ -18,7 +18,7 @@
     "postcss-load-config": "^5.0.2",
     "svelte": "^4.2.8",
     "svelte-turnstile": "^0.5.0",
-    "tailwindcss": "^3.3.2",
+    "tailwindcss": "^3.3.6",
     "vite": "^4.5.1"
   },
   "type": "module",
