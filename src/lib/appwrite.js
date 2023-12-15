@@ -1,5 +1,5 @@
 import { Client, Databases, Account, Avatars } from 'appwrite';
-import { env } from '$env/dynamic/public';
+import { env } from '$env/static/public';
 
 const client = new Client();
 

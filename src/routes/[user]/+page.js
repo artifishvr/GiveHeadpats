@@ -1,8 +1,6 @@
 import { Query } from 'appwrite';
 import { databases } from '$lib/appwrite';
-import { env } from '$env/dynamic/public';
-
-export const ssr = false;
+import { env } from '$env/static/public';
 
 export async function load({ params }) {
 

@@ -4,7 +4,7 @@
 
     import { account, databases } from '$lib/appwrite';
     import { ID, Query } from 'appwrite';
-    import { env } from '$env/dynamic/public';
+    import { env } from '$env/static/public';
 
     let email = '';
     let password = '';
