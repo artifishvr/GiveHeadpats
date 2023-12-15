@@ -1,12 +1,12 @@
 import { Query } from 'appwrite';
 import { databases } from '$lib/appwrite';
-import { env } from '$env/static/public';
+import { PUBLIC_HEADPATDB, PUBLIC_COLLECTION_HEADPATLIST, PUBLIC_COLLECTION_USERDATA } from '$env/static/public';
 
 export async function load({ params }) {
 
 	const listdatabase = await databases.listDocuments(
-		env.PUBLIC_HEADPATDB,
-		env.PUBLIC_COLLECTION_HEADPATLIST,
+		PUBLIC_HEADPATDB,
+		PUBLIC_COLLECTION_HEADPATLIST,
 		[
 			Query.equal('headpatted', params.user),
 			Query.orderDesc("$createdAt"),
@@ -15,8 +15,8 @@ export async function load({ params }) {
 	);
 
 	const userdata = await databases.listDocuments(
-		env.PUBLIC_HEADPATDB,
-		env.PUBLIC_COLLECTION_USERDATA,
+		PUBLIC_HEADPATDB,
+		PUBLIC_COLLECTION_USERDATA,
 		[
 			Query.equal('user', params.user),
 			Query.limit(1),

@@ -4,7 +4,7 @@
 
     import { account, databases } from '$lib/appwrite';
     import { ID, Query } from 'appwrite';
-    import { env } from '$env/static/public';
+    import { PUBLIC_HEADPATDB, PUBLIC_COLLECTION_USERDATA } from '$env/static/public';
 
     let email = '';
     let password = '';
@@ -55,7 +55,7 @@
             return false;
         }
 
-        const userdata = await databases.listDocuments(env.PUBLIC_HEADPATDB, env.PUBLIC_COLLECTION_USERDATA, [
+        const userdata = await databases.listDocuments(PUBLIC_HEADPATDB, PUBLIC_COLLECTION_USERDATA, [
             Query.equal('user', username),
             Query.limit(1),
         ]);
