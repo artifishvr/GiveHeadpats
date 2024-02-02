@@ -9,9 +9,9 @@ const client = new Client();
 const databases = new Databases(client);
 
 client
-    .setEndpoint(env.PUBLIC_API_ENDPOINT) // Your API Endpoint
-    .setProject(env.PUBLIC_PROJECT_ID) // Your project ID
-    .setKey(privenv.PRIVATE_API_KEY) // Your secret API key
+    .setEndpoint(env.PUBLIC_API_ENDPOINT)
+    .setProject(env.PUBLIC_PROJECT_ID)
+    .setKey(privenv.PRIVATE_API_KEY)
     ;
 
 export async function POST({ request }) {
