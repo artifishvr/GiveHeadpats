@@ -38,7 +38,7 @@
         <Button
             color="dark"
             on:click={async () => {
-                const accountResponse = await fetch('/api/validate', {
+                let accountResponse = await fetch('/api/validate', {
                     method: 'POST',
                     body: JSON.stringify({
                         username: username.toLowerCase(),
@@ -49,6 +49,7 @@
                         'content-type': 'application/json',
                     },
                 });
+                accountResponse = await accountResponse.json();
 
                 if (accountResponse.status !== 200) return alert(`${accountResponse.message}`);
 

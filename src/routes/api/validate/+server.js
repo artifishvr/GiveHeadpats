@@ -25,14 +25,7 @@ let status = 200;
 export async function POST({ request }) {
     const data = await request.json();
 
-    if (!(await validate(data.username, data.email, data.password))) {
-        return new Response(JSON.stringify({
-            status: status,
-            message: message,
-        }), {
-            headers: { 'Content-Type': 'application/json' }
-        });
-    }
+    await validate(data.username, data.email, data.password);
 
     return new Response(JSON.stringify({
         status: status,
@@ -77,8 +70,8 @@ async function validate(username, email, password) {
         return false;
     }
 
-    if (password.length < 6) {
-        message = 'Password must be at least 6 characters long.';
+    if (password.length < 8) {
+        message = 'Password must be at least 8 characters long.';
         status = 401;
         return false;
     }
