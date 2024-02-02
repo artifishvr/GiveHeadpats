@@ -32,6 +32,10 @@
     );
 </script>
 
+<svelte:head>
+    <title>Give Headpats</title>
+</svelte:head>
+
 <div class="text-center">
     <Heading tag="h1" class="mb-4 text-center" customSize="text-4xl font-extrabold md:text-5xl lg:text-6xl">Give Headpats</Heading>
     <br />

@@ -23,10 +23,6 @@
     inject({ mode: dev ? 'development' : 'production' });
 </script>
 
-<svelte:head>
-    <title>Give Headpats</title>
-</svelte:head>
-
 <Navbar class="drop-shadow-sm">
     <NavBrand href="/">
         <img src="/icon.webp" class="me-3 h-6 sm:h-9" alt="Headpats Icon" />
