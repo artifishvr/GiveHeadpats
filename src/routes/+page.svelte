@@ -55,7 +55,7 @@
     </div>
 
     <Footer>
-        <Heading tag="h3" class="mb-4 text-center mt-10" customSize="text-2xl font-bold md:text-2xl lg:text-2xl"
+        <Heading tag="h3" class="mb-4 text-center mt-10 pt-96" customSize="text-2xl font-bold md:text-2xl lg:text-2xl"
             >Built with ❤️ by ArtificialVR</Heading>
     </Footer>
 </div>
