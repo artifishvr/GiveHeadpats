@@ -139,7 +139,7 @@
 <Modal title="Send Headpat" bind:open={headpatModal} outsideclose class="text-center">
 	<div class="flex items-center justify-center">
 		<!-- svelte-ignore a11y-media-has-caption -->
-		<video src="pat.mp4" loop muted autoplay />
+		<video src="/pat.mp4" loop muted autoplay />
 	</div>
 	<button
 		class="text-center font-medium focus-within:ring-4 focus-within:outline-none inline-flex items-center justify-center px-5 py-2.5 text-sm text-white bg-purple-700 hover:bg-purple-800 dark:bg-purple-600 dark:hover:bg-purple-700 focus-within:ring-purple-300 dark:focus-within:ring-purple-900 rounded-lg"
