@@ -84,6 +84,11 @@
 
 <svelte:head>
 	<title>headpat {data.user}</title>
+	<meta content="headpat {data.user}" property="og:title" />
+	<meta content="give {data.user} some headpats!!!!" property="og:description" />
+	<meta content="https://pat.arti.lol/{data.user}" property="og:url" />
+	<meta content={avatarlink} property="og:image" />
+	<meta content="#00d64b" data-react-helmet="true" name="theme-color" />
 </svelte:head>
 
 <div class="bg-white gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 p-4 rounded-lg drop-shadow-md mb-10">
