@@ -34,6 +34,7 @@
 
         <Button color="dark" on:click={() => login(email, password)}>Login</Button>
         <Button color="secondary" href="/account/forgot">Forgot Password?</Button>
+        <Button color="blue" on:click={() => account.createOAuth2Session('discord', '')}>Login with Discord</Button>
 
         <P class="mt-6 mb-6 text-md lg:text-lg">
             {loggedInUser ? `Welcome back, ${loggedInUser.name}!` : ''}
