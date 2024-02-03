@@ -84,7 +84,7 @@
 
 <svelte:head>
 	<title>headpat {data.user}</title>
-	<meta content="headpat {data.user}" property="og:title" />
+	<meta content="{data.user} - Give Headpats" property="og:title" />
 	<meta content="give {data.user} some headpats!!!!" property="og:description" />
 	<meta content="https://pat.arti.lol/{data.user}" property="og:url" />
 	<meta content={avatarlink} property="og:image" />
