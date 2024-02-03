@@ -34,6 +34,11 @@
 
 <svelte:head>
     <title>Give Headpats</title>
+    <meta content="Give Headpats" property="og:title" />
+    <meta content="ko-fi... but headpats" property="og:description" />
+    <meta content="https://pat.arti.lol" property="og:url" />
+    <meta content="https://pat.arti.lol/patlogo-inverted.png" property="og:image" />
+    <meta content="#00d64b" data-react-helmet="true" name="theme-color" />
 </svelte:head>
 
 <div class="text-center">
