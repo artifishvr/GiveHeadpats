@@ -1,4 +1,4 @@
-import { Client, Databases, ID } from 'node-appwrite';
+import { Client, Databases, Users, ID } from 'node-appwrite';
 import { env } from '$env/dynamic/public';
 import { env as privenv } from '$env/dynamic/private';
 
@@ -6,13 +6,14 @@ import { text } from '@sveltejs/kit';
 
 const client = new Client();
 
-const databases = new Databases(client);
-
 client
     .setEndpoint(env.PUBLIC_API_ENDPOINT)
     .setProject(env.PUBLIC_PROJECT_ID)
     .setKey(privenv.PRIVATE_API_KEY)
     ;
+
+const databases = new Databases(client);
+const users = new Users(client);
 
 export async function POST({ request }) {
     const data = await request.json();
