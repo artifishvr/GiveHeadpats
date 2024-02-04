@@ -36,7 +36,6 @@
     <NavUl>
         {#if loggedIn.user}
             <NavLi href="/{loggedIn.user}">My Page</NavLi>
-            <NavLi href="/account">Account</NavLi>
             <NavLi
                 on:click={async () => {
                     await account.deleteSession('current');
