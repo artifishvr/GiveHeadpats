@@ -23,6 +23,7 @@ export async function POST({ request }) {
         PatsReceived: 0,
     });
 
+    await users.updateName(data.userID, data.user);
 
     return text("OK");
 }

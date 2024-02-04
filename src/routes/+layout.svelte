@@ -43,8 +43,7 @@
                 }}
                 href="#">Log Out</NavLi>
         {:else}
-            <NavLi href="/account/login">Log In</NavLi>
-            <NavLi href="/account/signup">Sign Up</NavLi>
+            <NavLi href="/account/login">Log In / Sign Up</NavLi>
         {/if}
     </NavUl>
 </Navbar>
