@@ -10,7 +10,7 @@
 
     async function login(email) {
         if (!emailRegex.test(email)) return alert('Please enter a valid email address.');
-        await account.createMagicURLSession(ID.unique(), email, 'http://localhost:5173/account/verify');
+        await account.createMagicURLSession(ID.unique(), email, 'https://pat.arti.lol/account/verify');
         popupModal = true;
     }
 </script>

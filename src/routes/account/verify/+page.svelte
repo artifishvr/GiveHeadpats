@@ -14,9 +14,6 @@
         const secret = urlParams.get('secret');
         const userId = urlParams.get('userId');
 
-        const debug = urlParams.get('debug');
-        if (debug == 'yes') returningUser = false;
-
         user = await account.updateMagicURLSession(userId, secret);
         console.log(user);
 
