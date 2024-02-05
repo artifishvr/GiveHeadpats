@@ -2,9 +2,8 @@
     import { databases } from '$lib/appwrite';
     import { Query } from 'appwrite';
     import { env } from '$env/dynamic/public';
-    import { Heading, P, Button, Footer, CardPlaceholder } from 'flowbite-svelte';
-    import { ArrowRightOutline, SearchOutline } from 'flowbite-svelte-icons';
-    import { browser } from '$app/environment';
+    import { Heading, P, Button } from 'flowbite-svelte';
+    import { ArrowRightOutline } from 'flowbite-svelte-icons';
 
     let mostpatted = [];
     let newusers = [];

@@ -1,5 +1,5 @@
 <script>
-    import { Heading, P } from 'flowbite-svelte';
+    import { Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h1" class="mb-4" customSize="text-2xl font-bold  md:text-3xl lg:text-4xl">Terms of Service</Heading>
