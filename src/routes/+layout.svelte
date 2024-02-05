@@ -64,11 +64,11 @@
     </NavUl>
 </Navbar>
 
-<div class="p-4 md:p-8 bg-white dark:bg-slate-950 h-100 min-h-screen">
+<div class="p-4 md:p-8 bg-gray-50 dark:bg-slate-950 h-100 min-h-screen">
     <slot />
 </div>
 
-<Footer class="bg-white dark:bg-slate-950 p-4">
+<Footer class="bg-white dark:bg-slate-950 p-4 drop-shadow-lg">
     <FooterCopyright href="https://arti.gay" by="ArtificialVR" copyrightMessage="All Rights Reserved." />
     <P class="text-center text-sm text-gray-500 sm:text-center dark:text-gray-400">Built with ❤️</P>
     <FooterLinkGroup ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
