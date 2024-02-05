@@ -3,7 +3,7 @@
     import { Query } from 'appwrite';
     import { env } from '$env/dynamic/public';
     import { Heading, P, Button, Footer, CardPlaceholder } from 'flowbite-svelte';
-    import { ArrowRightOutline } from 'flowbite-svelte-icons';
+    import { ArrowRightOutline, SearchOutline } from 'flowbite-svelte-icons';
     import { browser } from '$app/environment';
 
     let mostpatted = [];
@@ -74,7 +74,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto max max-w-7xl mt-10 px-4 sm:px-6 mb-8">
         {#each mostpatted as patted}
-            <div class="bg-white p-4 rounded-lg drop-shadow-sm">
+            <div class="bg-white dark:bg-slate-900 p-4 rounded-lg drop-shadow-sm">
                 <Heading tag="h2" class="mb-4" customSize="text-md font-bold md:text-md lg:text-md">{patted.user}</Heading>
                 <P class="mb-6 text-sm lg:text-sm dark:text-gray-400 text-center"
                     >Has received {patted.PatsReceived} pat{patted.PatsReceived !== 1 ? 's' : ''}!</P>
@@ -93,7 +93,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto max max-w-7xl mt-10 px-4 sm:px-6 mb-24">
         {#each newusers as patted}
-            <div class="bg-white p-4 rounded-lg drop-shadow-sm">
+            <div class="bg-white dark:bg-slate-900 p-4 rounded-lg drop-shadow-sm">
                 <Heading tag="h2" class="mb-4" customSize="text-md font-bold md:text-md lg:text-md">{patted.user}</Heading>
                 <P class="mb-6 text-sm lg:text-sm dark:text-gray-400 text-center"
                     >Has received {patted.PatsReceived} pat{patted.PatsReceived !== 1 ? 's' : ''}!</P>

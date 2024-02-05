@@ -1,6 +1,6 @@
 <script>
     import '../app.postcss';
-    import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Tooltip } from 'flowbite-svelte';
+    import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Tooltip, DarkMode } from 'flowbite-svelte';
     import { account } from '$lib/appwrite';
     import { dev, version } from '$app/environment';
     import { inject } from '@vercel/analytics';
@@ -34,7 +34,6 @@
             <Tooltip type="light" placement="right">v{version}</Tooltip>
         </a>
     </NavBrand>
-    <NavHamburger />
     <NavUl>
         {#if loggedIn.user}
             <NavLi href="/{loggedIn.user}">My Page</NavLi>
@@ -48,8 +47,11 @@
             <NavLi href="/account/login">Log In / Sign Up</NavLi>
         {/if}
     </NavUl>
+    <NavUl>
+        <NavLi><DarkMode /></NavLi>
+    </NavUl>
 </Navbar>
 
-<div class="p-4 md:p-8 bg-white h-100 min-h-screen">
+<div class="p-4 md:p-8 bg-white dark:bg-slate-950 h-100 min-h-screen">
     <slot />
 </div>

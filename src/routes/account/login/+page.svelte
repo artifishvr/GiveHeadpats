@@ -20,7 +20,7 @@
 </svelte:head>
 
 <div class="flex justify-center items-center">
-    <div class="bg-white rounded-lg p-6 max-w-lg sm:min-w-[50%] min-w-[90%]">
+    <div class="bg-white dark:bg-slate-900 rounded-lg p-6 max-w-lg sm:min-w-[50%] min-w-[90%]">
         <div class="mb-6">
             <Label for="email" class="block mb-2">Email</Label>
 
@@ -28,7 +28,7 @@
         </div>
 
         <Button color="dark" on:click={() => login(email)}>Login</Button>
-        <Button color="secondary" href="https://avris.it/blog/passwords-are-passé" target="_blank">Why no password?</Button>
+        <Button color="alternative" href="https://avris.it/blog/passwords-are-passé" target="_blank">Why no password?</Button>
 
         <P class="mt-6 mb-6 text-md lg:text-ms">If you don't have an account yet, one will be created for you.</P>
 

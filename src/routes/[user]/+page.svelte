@@ -100,7 +100,7 @@
 	<meta content="#00d64b" data-react-helmet="true" name="theme-color" />
 </svelte:head>
 
-<div class="bg-white gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 p-4 rounded-lg drop-shadow-md mb-10">
+<div class="bg-white dark:bg-slate-900 gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 p-4 rounded-lg drop-shadow-md mb-10">
 	<Avatar src={avatarlink} size="lg" />
 	<Heading tag="h1" class="mb-4 mt-4" customSize="text-2xl md:text-3xl lg:text-3xl">{data.user}</Heading>
 	<Heading tag="h2" class="mb-4" customSize="text-1xl md:text-1xl lg:text-1xl"
@@ -108,7 +108,7 @@
 </div>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-" id="main-interactive">
-	<div class="bg-white p-4 rounded-lg drop-shadow-sm">
+	<div class="bg-white dark:bg-slate-900 p-4 rounded-lg drop-shadow-sm">
 		<Heading tag="h3" class="mb-4" customSize="text-1xl"><b>Feed</b></Heading>
 		<div class="pl-5">
 			<Activity>
@@ -116,37 +116,35 @@
 			</Activity>
 		</div>
 	</div>
-	<div class="bg-white p-4 rounded-lg drop-shadow-sm">
-		<div class="">
-			<Heading tag="h3" class="mb-4" customSize="text-1xl"><b>Send headpats</b></Heading>
-			<div class="flex">
-				<Heading tag="h3" class="mb-4" customSize="text-md">Headpats</Heading>
-				<Button
-					class="w-10 h-10 mx-2"
-					color="dark"
-					pill
-					on:click={() => {
-						patcount -= 1;
-						if (patcount < 1) {
-							patcount = 1;
-						}
-					}}>-</Button>
-				<Input id="pat-count" class="mb-6 w-12 text-center rounded-full" placeholder="1" bind:value={patcount} readonly />
-				<Button
-					class="w-10 h-10 mx-2"
-					color="dark"
-					pill
-					on:click={() => {
-						patcount += 1;
-						if (patcount > 20) {
-							patcount = 20;
-						}
-					}}>+</Button>
-			</div>
-			<Label for="message" class="mb-2">Message (Optional)</Label>
-			<Input class="mb-3" id="message" placeholder="You cute!" bind:value={message} />
-			<Button id="submit-button" on:click={() => (headpatModal = true)} color="purple">Pat!!</Button>
+	<div class="bg-white dark:bg-slate-900 p-4 rounded-lg drop-shadow-sm">
+		<Heading tag="h3" class="mb-4" customSize="text-1xl"><b>Send headpats</b></Heading>
+		<div class="flex">
+			<Heading tag="h3" class="mb-4" customSize="text-md">Headpats</Heading>
+			<Button
+				class="w-10 h-10 mx-2"
+				color="dark"
+				pill
+				on:click={() => {
+					patcount -= 1;
+					if (patcount < 1) {
+						patcount = 1;
+					}
+				}}>-</Button>
+			<Input id="pat-count" class="mb-6 w-12 text-center rounded-full" placeholder="1" bind:value={patcount} readonly />
+			<Button
+				class="w-10 h-10 mx-2"
+				color="dark"
+				pill
+				on:click={() => {
+					patcount += 1;
+					if (patcount > 20) {
+						patcount = 20;
+					}
+				}}>+</Button>
 		</div>
+		<Label for="message" class="mb-2">Message (Optional)</Label>
+		<Input class="mb-3" id="message" placeholder="You cute!" bind:value={message} />
+		<Button id="submit-button" on:click={() => (headpatModal = true)} color="purple">Pat!!</Button>
 	</div>
 </div>
 

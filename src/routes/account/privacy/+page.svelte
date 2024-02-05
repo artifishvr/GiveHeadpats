@@ -2,63 +2,23 @@
     import { Heading, P } from 'flowbite-svelte';
 </script>
 
-<Heading tag="h1" class="mb-4" customSize="text-2xl font-bold  md:text-3xl lg:text-4xl">Privacy Policy</Heading>
+<Heading tag="h1" class="mb-4" customSize="text-2xl font-bold md:text-3xl lg:text-4xl">Privacy Policy</Heading>
 
-<section>
-    <h2>1. Information We Collect</h2>
-    <p>We collect information that you provide voluntarily when using HeadpatExchange, including but not limited to:</p>
-    <ul>
-        <li>Username</li>
-        <li>Email address</li>
-        <li>Profile information</li>
-    </ul>
-</section>
+<P class="mb-3 md:text-xl" weight="light" color="text-gray-500 dark:text-gray-400">Last Updated: 2024-02-05</P>
 
-<section>
-    <h2>2. Use of Information</h2>
-    <p>We use the collected information for the following purposes:</p>
-    <ul>
-        <li>Facilitate virtual headpat exchanges</li>
-        <li>Improve and personalize the user experience</li>
-        <li>Prevent spam and ensure site security</li>
-    </ul>
-</section>
+<P class="mb-3 md:text-xl" weight="light" size="lg" color="text-gray-500 dark:text-gray-400">We don't sell your information</P>
 
-<section>
-    <h2>3. CAPTCHA and Security</h2>
-    <p>We use Cloudflare Turnstile as a CAPTCHA provider to prevent spam and enhance the security of our platform.</p>
-</section>
+<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400"
+    >or track you across websites, or misuse your information. We only collect the information that is required for the service to function and
+    use third-party services to improve the service.<br />
+    We use the following information that is required for the service to function:<br />
+    - The username that you provide<br />
+    - Your email provided at signup<br />
+    - Your IP address to prevent spam</P>
 
-<section>
-    <h2>4. Third-Party Login (Future Implementation)</h2>
-    <p>
-        When Oauth2 login functionality with Twitch and Discord is implemented, we will collect and use your information in accordance with the
-        respective platform's policies.
-    </p>
-</section>
-
-<section>
-    <h2>5. User Content</h2>
-    <p>Users are solely responsible for the content they submit to the site. We do not claim ownership of user-generated content.</p>
-</section>
-
-<section>
-    <h3>6. Analytics</h3>
-    <p>
-        We make use of Vercel Analytics to measure website traffic to improve user experience. You can read their privacy policy <a
-            href="https://vercel.com/docs/analytics/privacy-policy"
-            target="_blank">here</a>
-    </p>
-</section>
-
-<section>
-    <h2>6. Changes to Privacy Policy</h2>
-    <p>We reserve the right to modify or revise this Privacy Policy at any time.</p>
-</section>
-
-<section>
-    <h2>7. Contact Information</h2>
-    <p>
-        If you have any questions or concerns about this Privacy Policy, please contact us at <a href="mailto:pats@arti.lol">pats@arti.lol</a>.
-    </p>
-</section>
+<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+    Additionally, we use the following third-party services: <br />
+    - Cloudflare Turnstile for CAPTCHA <br />
+    - Twitch and Discord for Oauth2 login (future implementation)<br />
+    - Vercel for hosting, analytics, logging, and performance monitoring<br />
+    By agreeing to this privacy policy, you also agree to the privacy policies of the third-party services that we use.</P>

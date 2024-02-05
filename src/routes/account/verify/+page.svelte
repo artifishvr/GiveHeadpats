@@ -33,7 +33,7 @@
 </svelte:head>
 
 <div class="flex justify-center items-center">
-    <div class="bg-white rounded-lg p-6 max-w-lg sm:min-w-[50%] min-w-[90%]">
+    <div class="bg-white dark:bg-slate-900 rounded-lg p-6 max-w-lg sm:min-w-[50%] min-w-[90%]">
         {#if returningUser}
             <Heading class="mb-3" tag="h2" customSize="text-4xl font-extrabold ">Logged in successfully.</Heading>
             <P class="mb-6">Welcome back.</P>
