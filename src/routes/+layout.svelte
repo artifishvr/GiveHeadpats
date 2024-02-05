@@ -1,6 +1,18 @@
 <script>
     import '../app.postcss';
-    import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Tooltip, DarkMode } from 'flowbite-svelte';
+    import {
+        Navbar,
+        NavBrand,
+        NavLi,
+        NavUl,
+        Tooltip,
+        DarkMode,
+        Footer,
+        FooterCopyright,
+        FooterLink,
+        FooterLinkGroup,
+        P,
+    } from 'flowbite-svelte';
     import { account } from '$lib/appwrite';
     import { dev, version } from '$app/environment';
     import { inject } from '@vercel/analytics';
@@ -55,3 +67,12 @@
 <div class="p-4 md:p-8 bg-white dark:bg-slate-950 h-100 min-h-screen">
     <slot />
 </div>
+
+<Footer class="bg-white dark:bg-slate-950 p-4">
+    <FooterCopyright href="https://arti.gay" by="ArtificialVR" copyrightMessage="All Rights Reserved." />
+    <P class="text-center text-sm text-gray-500 sm:text-center dark:text-gray-400">Built with ❤️</P>
+    <FooterLinkGroup ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+        <FooterLink href="/account/privacy">Privacy Policy</FooterLink>
+        <FooterLink href="/account/tos">TOS</FooterLink>
+    </FooterLinkGroup>
+</Footer>

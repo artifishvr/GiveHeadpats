@@ -108,10 +108,4 @@
             </div>
         {/each}
     </div>
-    <Footer>
-        <Heading tag="h3" class="mb-4 text-center mt-10 pt-96" customSize="text-2xl font-bold md:text-2xl lg:text-2xl"
-            >Built with ❤️ by <a href="https://arti.gay" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline"
-                >ArtificialVR</a
-            ></Heading>
-    </Footer>
 </div>
