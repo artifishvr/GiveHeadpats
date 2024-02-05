@@ -73,7 +73,8 @@
                         },
                     });
 
-                    location.href = '/';
+                    window.location.href = '/';
+                    window.location.reload(true);
                 }}>Finish</Button>
         {/if}
     </div>
