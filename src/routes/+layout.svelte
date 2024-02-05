@@ -5,6 +5,7 @@
         NavBrand,
         NavLi,
         NavUl,
+        NavHamburger,
         Tooltip,
         DarkMode,
         Footer,
@@ -46,6 +47,7 @@
             <Tooltip type="light" placement="right">v{version}</Tooltip>
         </a>
     </NavBrand>
+    <NavHamburger />
     <NavUl>
         {#if loggedIn.user}
             <NavLi href="/{loggedIn.user}">My Page</NavLi>
