@@ -17,25 +17,6 @@
 
 	let actor = '';
 
-	try {
-		const actorAccount = account.get();
-		actorAccount.then(
-			function (response) {
-				if (response.name) {
-					actor = response.name;
-				} else {
-					actor = 'Guest';
-				}
-			},
-			function (error) {
-				actor = 'Guest';
-			},
-		);
-	} catch (error) {
-		actor = 'Guest';
-		console.log(error);
-	}
-
 	let activities = [];
 
 	data.allpats.forEach((pat) => {
@@ -84,9 +65,28 @@
 	let avatarlink = avatars.getInitials(data.user);
 
 	onMount(async () => {
+		try {
+			const actorAccount = account.get();
+			actorAccount.then(
+				function (response) {
+					if (response.name) {
+						actor = response.name;
+					} else {
+						actor = 'Guest';
+					}
+				},
+				function (error) {
+					actor = 'Guest';
+				},
+			);
+		} catch (error) {
+			actor = 'Guest';
+			console.log(error);
+		}
+
 		if (data.status == 404) {
 			document.getElementById('main-interactive').innerHTML = '404';
-			document.getElementById('submit-button').disabled = true; // disable submit button
+			document.getElementById('submit-button').disabled = true;
 		}
 	});
 </script>
