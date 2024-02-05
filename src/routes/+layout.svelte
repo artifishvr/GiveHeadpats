@@ -4,6 +4,7 @@
     import { account } from '$lib/appwrite';
     import { dev, version } from '$app/environment';
     import { inject } from '@vercel/analytics';
+    import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 
     let loggedIn = {};
     loggedIn.status = false;
@@ -21,6 +22,7 @@
     );
 
     inject({ mode: dev ? 'development' : 'production' });
+    injectSpeedInsights();
 </script>
 
 <Navbar class="drop-shadow-sm">
