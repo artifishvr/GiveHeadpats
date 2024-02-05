@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { Heading, P, Label, Input, Button } from 'flowbite-svelte';
+    import { Heading, P, Label, Input, Button, Alert } from 'flowbite-svelte';
     import { account, databases } from '$lib/appwrite';
     import { Query } from 'appwrite';
     import { PUBLIC_HEADPATDB, PUBLIC_COLLECTION_USERDATA } from '$env/static/public';
@@ -77,5 +77,11 @@
                     window.location.reload(true);
                 }}>Finish</Button>
         {/if}
+        <div class="pt-6">
+            <Alert color="yellow">
+                <span class="font-medium">Known Issue - </span>
+                Your account may appear as "Guest" after navigating until you refresh the page. We're working on it.
+            </Alert>
+        </div>
     </div>
 </div>
