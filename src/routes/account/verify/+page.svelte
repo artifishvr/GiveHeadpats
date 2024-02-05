@@ -37,7 +37,7 @@
         {#if returningUser}
             <Heading class="mb-3" tag="h2" customSize="text-4xl font-extrabold ">Logged in successfully.</Heading>
             <P class="mb-6">Welcome back.</P>
-            <Button href="/" color="dark">Go home</Button>
+            <a data-sveltekit-reload href="/"><Button color="dark">Go home</Button></a>
         {:else}
             <Heading tag="h2" customSize="text-4xl font-extrabold ">Welcome!</Heading>
             <P class="mb-3">It's nice to meet you! Let's get you set up.</P>
@@ -73,15 +73,8 @@
                         },
                     });
 
-                    window.location.href = '/';
-                    window.location.reload(true);
+                    location.reload();
                 }}>Finish</Button>
         {/if}
-        <div class="pt-6">
-            <Alert color="yellow">
-                <span class="font-medium">Known Issue - </span>
-                Your account may appear as "Guest" after navigating until you refresh the page. We're working on it.
-            </Alert>
-        </div>
     </div>
 </div>
