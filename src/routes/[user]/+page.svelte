@@ -52,6 +52,15 @@
 	async function patpat() {
 		headpatModal = false;
 		if (data.status !== 200) return;
+		activities.unshift({
+			title: `${actor} gave ${patcount} headpat${patcount !== 1 ? 's' : ''}`,
+			date: relativeDate(new Date()),
+			text: sanitizeHtml(message, {
+				allowedTags: ['b', 'i'],
+			}),
+			avatar: avatars.getInitials(actor),
+		});
+		activities = activities;
 		const response = await fetch('/api/headpat', {
 			method: 'POST',
 			body: JSON.stringify({
@@ -95,7 +104,7 @@
 	<Avatar src={avatarlink} size="lg" />
 	<Heading tag="h1" class="mb-4 mt-4" customSize="text-2xl md:text-3xl lg:text-3xl">{data.user}</Heading>
 	<Heading tag="h2" class="mb-4" customSize="text-1xl md:text-1xl lg:text-1xl"
-		>Has earned {headpats} headpat{headpats > 1 ? 's' : ''}</Heading>
+		>Has earned {headpats} headpat{headpats !== 1 ? 's' : ''}</Heading>
 </div>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-" id="main-interactive">
