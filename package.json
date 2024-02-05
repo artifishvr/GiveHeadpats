@@ -1,6 +1,6 @@
 {
   "name": "headpats",
-  "version": "0.32.3",
+  "version": "0.32.4",
   "private": true,
   "scripts": {
     "dev": "vite dev",
