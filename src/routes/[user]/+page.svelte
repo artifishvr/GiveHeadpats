@@ -143,7 +143,11 @@
 				}}>+</Button>
 		</div>
 		<Label for="message" class="mb-2">Message (Optional)</Label>
-		<Input class="mb-3" id="message" placeholder="You cute!" bind:value={message} />
+		{#if actor == 'Guest'}
+			<Input class="mb-3" disabled value="Login to send messages!" />
+		{:else}
+			<Input class="mb-3" id="message" placeholder="You cute!" bind:value={message} />
+		{/if}
 		<Button id="submit-button" on:click={() => (headpatModal = true)} color="purple">Pat!!</Button>
 	</div>
 </div>
