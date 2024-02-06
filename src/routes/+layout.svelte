@@ -39,7 +39,7 @@
 </script>
 
 <Navbar class="drop-shadow-sm">
-    <NavBrand href="/">
+    <NavBrand href="/" data-sveltekit-reload>
         <img src="/icon.webp" class="me-3 h-6 sm:h-9" alt="Headpats Icon" />
         <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Give Headpats</span>
         <a href="https://github.com/artificialbutter/GiveHeadpats" target="_blank">
@@ -49,6 +49,7 @@
     </NavBrand>
     <NavHamburger />
     <NavUl>
+        <NavLi href="/" data-sveltekit-reload>Home</NavLi>
         {#if loggedIn.user}
             <NavLi href="/{loggedIn.user}">My Page</NavLi>
             <NavLi
