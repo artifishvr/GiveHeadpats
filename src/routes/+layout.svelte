@@ -51,7 +51,7 @@
     <NavUl>
         <NavLi href="/" data-sveltekit-reload>Home</NavLi>
         {#if loggedIn.user}
-            <NavLi href="/{loggedIn.user}">My Page</NavLi>
+            <NavLi href="/@{loggedIn.user}">My Page</NavLi>
             <NavLi
                 on:click={async () => {
                     await account.deleteSession('current');

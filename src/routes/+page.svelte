@@ -78,7 +78,7 @@
                 <P class="mb-6 text-sm lg:text-sm dark:text-gray-400 text-center"
                     >Has received {patted.PatsReceived} pat{patted.PatsReceived !== 1 ? 's' : ''}!</P>
                 {#if !patted.hideButton}
-                    <Button href={'/' + patted.user}>
+                    <Button href={'/@' + patted.user}>
                         Give them a Pat!
                         <ArrowRightOutline class="w-3.5 h-3.5 ml-2" />
                     </Button>
@@ -97,7 +97,7 @@
                 <P class="mb-6 text-sm lg:text-sm dark:text-gray-400 text-center"
                     >Has received {patted.PatsReceived} pat{patted.PatsReceived !== 1 ? 's' : ''}!</P>
                 {#if !patted.hideButton}
-                    <Button href={'/' + patted.user}>
+                    <Button href={'/@' + patted.user}>
                         Give them a Pat!
                         <ArrowRightOutline class="w-3.5 h-3.5 ml-2" />
                     </Button>
