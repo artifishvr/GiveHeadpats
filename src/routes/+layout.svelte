@@ -75,7 +75,7 @@
     <FooterCopyright href="https://arti.gay" by="ArtificialVR" copyrightMessage="All Rights Reserved." />
     <P class="text-center text-sm text-gray-500 sm:text-center dark:text-gray-400">Built with ❤️</P>
     <FooterLinkGroup ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-        <FooterLink href="/account/privacy">Privacy Policy</FooterLink>
-        <FooterLink href="/account/tos">TOS</FooterLink>
+        <FooterLink href="/privacy">Privacy Policy</FooterLink>
+        <FooterLink href="/tos">TOS</FooterLink>
     </FooterLinkGroup>
 </Footer>
