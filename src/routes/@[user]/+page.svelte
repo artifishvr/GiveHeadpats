@@ -1,4 +1,5 @@
 <script>
+	import { PUBLIC_API_ENDPOINT, PUBLIC_PROJECT_ID, PUBLIC_PFP_BUCKET_ID } from '$env/static/public';
 	import { Heading, Button, Avatar, Input, Label, Activity, ActivityItem, Modal } from 'flowbite-svelte';
 	import { avatars, account } from '$lib/appwrite';
 	import relativeDate from '$lib/relativeDate';
@@ -63,6 +64,10 @@
 	}
 
 	let avatarlink = avatars.getInitials(data.user);
+
+	if (data.pfp) {
+		avatarlink = `${PUBLIC_API_ENDPOINT}/storage/buckets/${PUBLIC_PFP_BUCKET_ID}/files/${data.pfp}/view?project=${PUBLIC_PROJECT_ID}`;
+	}
 
 	onMount(async () => {
 		try {
