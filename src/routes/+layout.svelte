@@ -13,7 +13,11 @@
         FooterLink,
         FooterLinkGroup,
         P,
+        Dropdown,
+        DropdownItem,
+        DropdownDivider,
     } from 'flowbite-svelte';
+    import { ChevronDownOutline } from 'flowbite-svelte-icons';
     import { account } from '$lib/appwrite';
     import { dev, version } from '$app/environment';
     import { inject } from '@vercel/analytics';
@@ -58,15 +62,23 @@
         <NavHamburger />
         <NavUl>
             <NavLi href="/">Home</NavLi>
+
             <NavLi href="/explore">Explore</NavLi>
             {#if loggedIn.user}
-                <NavLi href="/@{loggedIn.user}">My Page</NavLi>
-                <NavLi
-                    on:click={async () => {
-                        await account.deleteSession('current');
-                        loggedIn = false;
-                    }}
-                    href="#">Log Out</NavLi>
+                <NavLi class="cursor-pointer">
+                    Account<ChevronDownOutline class="w-3 h-3 ms-2 text-primary-800 dark:text-white inline" />
+                </NavLi>
+                <Dropdown class="w-44 z-20">
+                    <DropdownItem href="/@{loggedIn.user}">My Page</DropdownItem>
+                    <DropdownItem href="/account/settings">Settings</DropdownItem>
+                    <DropdownDivider />
+                    <DropdownItem
+                        on:click={async () => {
+                            await account.deleteSession('current');
+                            loggedIn = false;
+                        }}
+                        href="#">Log Out</DropdownItem>
+                </Dropdown>
             {:else}
                 <NavLi href="/account/login">Log In / Sign Up</NavLi>
             {/if}

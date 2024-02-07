@@ -33,12 +33,11 @@ export async function load({ params }) {
 	}
 
 
-
 	return {
 		headpats: userdata.documents[0].PatsReceived,
 		user: params.user,
 		allpats: listdatabase.documents,
 		status: 200,
+		pfp: userdata.documents[0].pfpID,
 	}
-
 };
