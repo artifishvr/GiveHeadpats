@@ -18,6 +18,13 @@
     import { dev, version } from '$app/environment';
     import { inject } from '@vercel/analytics';
     import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+    import { page } from '$app/stores';
+
+    let pagePath = '';
+
+    page.subscribe((path) => {
+        pagePath = path.url.pathname;
+    });
 
     let loggedIn = {};
     loggedIn.status = false;
@@ -38,34 +45,37 @@
     injectSpeedInsights();
 </script>
 
-<Navbar class="drop-shadow-sm">
-    <NavBrand href="/" data-sveltekit-reload>
-        <img src="/icon.webp" class="me-3 h-6 sm:h-9" alt="Headpats Icon" />
-        <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Give Headpats</span>
-        <a href="https://github.com/artificialbutter/GiveHeadpats" target="_blank">
-            <span class="ml-2 px-3 py-2 rounded-full bg-red-200 text-red-800 font-semibold">Open Alpha</span>
-            <Tooltip type="light" placement="right">v{version}</Tooltip>
-        </a>
-    </NavBrand>
-    <NavHamburger />
-    <NavUl>
-        <NavLi href="/" data-sveltekit-reload>Home</NavLi>
-        {#if loggedIn.user}
-            <NavLi href="/@{loggedIn.user}">My Page</NavLi>
-            <NavLi
-                on:click={async () => {
-                    await account.deleteSession('current');
-                    loggedIn = false;
-                }}
-                href="#">Log Out</NavLi>
-        {:else}
-            <NavLi href="/account/login">Log In / Sign Up</NavLi>
-        {/if}
-    </NavUl>
-    <NavUl>
-        <NavLi><DarkMode /></NavLi>
-    </NavUl>
-</Navbar>
+{#if pagePath !== '/account/verify'}
+    <Navbar class="drop-shadow-sm">
+        <NavBrand href="/">
+            <img src="/icon.webp" class="me-3 h-6 sm:h-9" alt="Headpats Icon" />
+            <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Give Headpats</span>
+            <a href="https://github.com/artificialbutter/GiveHeadpats" target="_blank">
+                <span class="ml-2 px-3 py-2 rounded-full bg-red-200 text-red-800 font-semibold">Open Alpha</span>
+                <Tooltip type="light" placement="right">v{version}</Tooltip>
+            </a>
+        </NavBrand>
+        <NavHamburger />
+        <NavUl>
+            <NavLi href="/">Home</NavLi>
+            <NavLi href="/explore">Explore</NavLi>
+            {#if loggedIn.user}
+                <NavLi href="/@{loggedIn.user}">My Page</NavLi>
+                <NavLi
+                    on:click={async () => {
+                        await account.deleteSession('current');
+                        loggedIn = false;
+                    }}
+                    href="#">Log Out</NavLi>
+            {:else}
+                <NavLi href="/account/login">Log In / Sign Up</NavLi>
+            {/if}
+        </NavUl>
+        <NavUl>
+            <NavLi><DarkMode /></NavLi>
+        </NavUl>
+    </Navbar>
+{/if}
 
 <div class="p-4 md:p-8 bg-gray-50 dark:bg-slate-950 h-100 min-h-screen">
     <slot />
