@@ -23,7 +23,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@vercel/analytics": "^1.1.2",
+    "@vercel/analytics": "^1.1.3",
     "@vercel/speed-insights": "^1.0.9",
     "appwrite": "^13.0.1",
     "node-appwrite": "^11.1.0",
