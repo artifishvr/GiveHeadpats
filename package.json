@@ -27,7 +27,7 @@
     "@vercel/speed-insights": "^1.0.9",
     "appwrite": "^13.0.1",
     "node-appwrite": "^11.1.0",
-    "sanitize-html": "^2.11.0",
+    "sanitize-html": "^2.12.1",
     "svelte-gestures": "^4.0.0"
   }
 }
