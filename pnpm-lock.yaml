@@ -38,8 +38,8 @@ devDependencies:
     specifier: ^2.3.0
     version: 2.3.0
   flowbite-svelte:
-    specifier: ^0.44.23
-    version: 0.44.23(svelte@4.2.10)
+    specifier: ^0.44.24
+    version: 0.44.24(svelte@4.2.10)
   flowbite-svelte-icons:
     specifier: ^1.4.0
     version: 1.4.0(svelte@4.2.10)(tailwind-merge@2.2.1)(tailwindcss@3.4.1)
@@ -533,8 +533,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /apexcharts@3.45.2:
-    resolution: {integrity: sha512-PpuM4sJWy70sUh5U1IFn1m1p45MdHSChLUNnqEoUUUHSU2IHZugFrsVNhov1S8Q0cvfdrCRCvdBtHGSs6PSAWQ==}
+  /apexcharts@3.46.0:
+    resolution: {integrity: sha512-ELAY6vj8JQD7QLktKasTzwm9Wt0qxqfQSo+3QWS7G7I774iK8HCkG1toGsqJH0mkK6PtYBtnSIe66uUcwoCw1w==}
     dependencies:
       '@yr/monotone-cubic-spline': 1.0.3
       svg.draggable.js: 2.2.2
@@ -917,14 +917,14 @@ packages:
       tailwindcss: 3.4.1
     dev: true
 
-  /flowbite-svelte@0.44.23(svelte@4.2.10):
-    resolution: {integrity: sha512-F79/iRLLs5WHYX1CqFx5Maqookit1tLpN0VmHR91tcuFEcHY5BRyLXb7hVehwj16wvG7/N0Blchlz55HyqPjhQ==}
+  /flowbite-svelte@0.44.24(svelte@4.2.10):
+    resolution: {integrity: sha512-kXhJZHGpBVq5RFOoYnzRCEM8eFa81DVp4KjUbBsLJptKhizbSSBJuYApWIQb9pBCS8EBhX4PAX+RsgEDZfEqtA==}
     engines: {node: '>=18.0.0', pnpm: '>=8.0.0'}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
       '@floating-ui/dom': 1.6.3
-      apexcharts: 3.45.2
+      apexcharts: 3.46.0
       flowbite: 2.3.0
       svelte: 4.2.10
       tailwind-merge: 2.2.1
