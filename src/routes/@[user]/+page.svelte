@@ -34,15 +34,6 @@
 	async function patpat() {
 		headpatModal = false;
 		if (data.status !== 200) return;
-		activities.unshift({
-			title: `${actor} gave ${patcount} headpat${patcount !== 1 ? 's' : ''}`,
-			date: relativeDate(new Date()),
-			text: sanitizeHtml(message, {
-				allowedTags: ['b', 'i'],
-			}),
-			avatar: avatars.getInitials(actor),
-		});
-		activities = activities;
 		const response = await fetch('/api/headpat', {
 			method: 'POST',
 			body: JSON.stringify({
@@ -61,6 +52,14 @@
 		if (responseJSON.status !== 200) return alert(responseJSON.response);
 
 		headpats = responseJSON.response;
+		activities = activities.unshift({
+			title: `${actor} gave ${patcount} headpat${patcount !== 1 ? 's' : ''}`,
+			date: relativeDate(new Date()),
+			text: sanitizeHtml(message, {
+				allowedTags: ['b', 'i'],
+			}),
+			avatar: avatars.getInitials(actor),
+		});
 	}
 
 	let avatarlink = avatars.getInitials(data.user);
