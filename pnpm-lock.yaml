@@ -15,8 +15,8 @@ dependencies:
     specifier: ^13.0.2
     version: 13.0.2
   node-appwrite:
-    specifier: ^11.1.0
-    version: 11.1.0
+    specifier: ^11.1.1
+    version: 11.1.1
   sanitize-html:
     specifier: ^2.12.1
     version: 2.12.1
@@ -1276,8 +1276,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  /node-appwrite@11.1.0:
-    resolution: {integrity: sha512-yA6gNhgEPaxRtPtd7vr7rE3nsl/ZjPsUzGwGe7GXwWShzKp1ngUOdznYuack5SZVttX52P8ToqnrHOWhgiDzVA==}
+  /node-appwrite@11.1.1:
+    resolution: {integrity: sha512-j9QTHfsDx/RoLq9shVtpDWofCG8u/izy6uQrlzet7+UV14OMikaPUNZpQhtZGi5KjLy5R+JvJfx6HHXrfdcIvQ==}
     dependencies:
       axios: 1.6.2
       form-data: 4.0.0
