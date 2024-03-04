@@ -1,6 +1,6 @@
 {
   "name": "headpats",
-  "version": "0.22.2",
+  "version": "0.37.1",
   "private": true,
   "scripts": {
     "dev": "vite dev",
@@ -9,24 +9,25 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-vercel": "^3.1.0",
-    "@sveltejs/kit": "^1.30.3",
+    "@sveltejs/kit": "^1.30.4",
     "autoprefixer": "^10.4.17",
-    "flowbite": "^2.2.1",
-    "flowbite-svelte": "^0.44.22",
-    "flowbite-svelte-icons": "^1.0.3",
-    "postcss": "^8.4.33",
-    "postcss-load-config": "^5.0.2",
-    "svelte": "^4.2.9",
+    "flowbite": "^2.3.0",
+    "flowbite-svelte": "^0.44.24",
+    "flowbite-svelte-icons": "^1.4.0",
+    "postcss": "^8.4.35",
+    "postcss-load-config": "^5.0.3",
+    "svelte": "^4.2.12",
     "svelte-turnstile": "^0.5.0",
     "tailwindcss": "^3.4.1",
     "vite": "^4.5.2"
   },
   "type": "module",
   "dependencies": {
-    "@vercel/analytics": "^1.1.2",
+    "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.9",
     "appwrite": "^13.0.1",
     "node-appwrite": "^11.1.0",
-    "sanitize-html": "^2.11.0",
-    "svelte-gestures": "^1.5.2"
+    "sanitize-html": "^2.12.1",
+    "svelte-gestures": "^4.0.0"
   }
 }

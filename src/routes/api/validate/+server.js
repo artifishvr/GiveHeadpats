@@ -25,7 +25,7 @@ let status = 200;
 export async function POST({ request }) {
     const data = await request.json();
 
-    await validate(data.username, data.email, data.password);
+    await validate(data.username);
 
     return new Response(JSON.stringify({
         status: status,
@@ -39,7 +39,7 @@ export async function fallback({ request }) {
     return text(`Unknown ${request.method} request!`);
 }
 
-async function validate(username, email, password) {
+async function validate(username) {
     if (username.length < 3) {
         message = 'Username must be at least 3 characters long.';
         status = 401;
@@ -54,24 +54,6 @@ async function validate(username, email, password) {
 
     if (!username.match(/^\w+$/)) {
         message = 'Username must only contain letters, numbers, and underscores.';
-        status = 401;
-        return false;
-    }
-
-    if (email.length < 3) {
-        message = 'Email must be at least 3 characters long.';
-        status = 401;
-        return false;
-    }
-
-    if (email.length > 320) {
-        message = 'Email must be less than 320 characters long.';
-        status = 401;
-        return false;
-    }
-
-    if (password.length < 8) {
-        message = 'Password must be at least 8 characters long.';
         status = 401;
         return false;
     }
