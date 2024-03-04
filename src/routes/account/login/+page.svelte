@@ -29,7 +29,14 @@
 
         <Button color="dark" on:click={() => login(email)}>Login</Button>
         <Button color="alternative" href="https://avris.it/blog/passwords-are-passé" target="_blank">Why no password?</Button>
-        <Button color="blue" on:click={() => account.createOAuth2Session('discord', '')}>Login with Discord</Button>
+        <Button
+            color="blue"
+            on:click={() =>
+                account.createOAuth2Session(
+                    'discord',
+                    'http://localhost:5173/account/oauth/success',
+                    'http://localhost:5173/account/oauth/fail',
+                )}>Login with Discord</Button>
 
         <P class="mt-6 mb-6 text-md lg:text-ms">If you don't have an account yet, one will be created for you.</P>
 
