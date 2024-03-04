@@ -23,6 +23,7 @@
     import { inject } from '@vercel/analytics';
     import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
     import { page } from '$app/stores';
+    import { onMount } from 'svelte';
 
     let pagePath = '';
 
@@ -47,6 +48,11 @@
 
     inject({ mode: dev ? 'development' : 'production' });
     injectSpeedInsights();
+
+    onMount(() => {
+        console.log('hiiiiii :3');
+        console.log("if you know what you're doing here, come contribute at https://github.com/artificialbutter/GiveHeadpats c:");
+    });
 </script>
 
 {#if pagePath !== '/account/verify'}

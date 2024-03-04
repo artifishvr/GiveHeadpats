@@ -1,5 +1,5 @@
 <script>
-	import { PUBLIC_API_ENDPOINT, PUBLIC_PROJECT_ID, PUBLIC_PFP_BUCKET_ID } from '$env/static/public';
+	import { PUBLIC_API_ENDPOINT, PUBLIC_PROJECT_ID, PUBLIC_PFP_BUCKET_ID, PUBLIC_HOST } from '$env/static/public';
 	import { Heading, Button, Avatar, Input, Label, Activity, ActivityItem, Modal } from 'flowbite-svelte';
 	import { avatars, account } from '$lib/appwrite';
 	import relativeDate from '$lib/relativeDate';
@@ -99,7 +99,7 @@
 	<title>headpat {data.user}</title>
 	<meta content="{data.user} - Give Headpats" property="og:title" />
 	<meta content="give {data.user} some headpats!!!!" property="og:description" />
-	<meta content="https://pat.arti.lol/{data.user}" property="og:url" />
+	<meta content="{PUBLIC_HOST}/@{data.user}" property="og:url" />
 	<meta content={avatarlink} property="og:image" />
 	<meta content="#00d64b" data-react-helmet="true" name="theme-color" />
 </svelte:head>

@@ -1,4 +1,5 @@
 <script>
+    import { PUBLIC_HOST } from '$env/static/public';
     import { Label, Input, Button, P, Modal } from 'flowbite-svelte';
     import { CheckCircleOutline } from 'flowbite-svelte-icons';
     import { ID } from 'appwrite';
@@ -10,7 +11,7 @@
 
     async function login(email) {
         if (!emailRegex.test(email)) return alert('Please enter a valid email address.');
-        await account.createMagicURLSession(ID.unique(), email, 'https://pat.arti.lol/account/verify');
+        await account.createMagicURLSession(ID.unique(), email, `${PUBLIC_HOST}/account/verify`);
         popupModal = true;
     }
 </script>
