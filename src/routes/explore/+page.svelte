@@ -4,6 +4,11 @@
     export let data;
 </script>
 
+<svelte:head>
+    <title>Explore</title>
+    <meta name="description" content="Find new users to give headpats to!" />
+</svelte:head>
+
 <div class="mx-auto max max-w-7xl mt-10 px-4 sm:px-6 mb-8">
     <Heading tag="h1" class="mb-4" customSize="text-2xl font-bold  md:text-3xl lg:text-4xl">Explore</Heading>
     <P class="text-gray-500 dark:text-gray-400">Find new users to give headpats to!</P>
