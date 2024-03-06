@@ -24,6 +24,18 @@
     import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
     import { page } from '$app/stores';
     import { onMount } from 'svelte';
+    import { initializeApp } from 'firebase/app';
+
+    const firebaseConfig = {
+        apiKey: 'AIzaSyCllOmrxb9W5xX1jR86WzBEoIAeOIOQTg0',
+        authDomain: 'headpats-269f7.firebaseapp.com',
+        projectId: 'headpats-269f7',
+        storageBucket: 'headpats-269f7.appspot.com',
+        messagingSenderId: '543013418180',
+        appId: '1:543013418180:web:d894ec09ca06549fc9c591',
+    };
+
+    initializeApp(firebaseConfig);
 
     let pagePath = '';
 

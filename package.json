@@ -1,6 +1,6 @@
 {
   "name": "headpats",
-  "version": "0.38.2",
+  "version": "0.39.0",
   "private": true,
   "scripts": {
     "dev": "vite dev",
@@ -26,6 +26,7 @@
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.9",
     "appwrite": "^13.0.2",
+    "firebase": "^10.8.1",
     "node-appwrite": "^11.1.1",
     "sanitize-html": "^2.12.1",
     "svelte-gestures": "^4.0.0"
