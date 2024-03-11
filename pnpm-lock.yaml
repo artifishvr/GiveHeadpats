@@ -12,8 +12,8 @@ dependencies:
     specifier: ^1.0.9
     version: 1.0.9(@sveltejs/kit@1.30.4)(svelte@4.2.12)
   appwrite:
-    specifier: ^13.0.2
-    version: 13.0.2
+    specifier: ^14.0.0
+    version: 14.0.0
   firebase:
     specifier: ^10.8.1
     version: 10.8.1
@@ -1073,8 +1073,8 @@ packages:
       svg.select.js: 3.0.1
     dev: true
 
-  /appwrite@13.0.2:
-    resolution: {integrity: sha512-ISkUXO8pojDWGx5XqknCwwikgAQye4Ni4FL+Ns8Hg42rXeyehLlmvHGjFOmpS+odT6nsWYUaXzVjV4SZuDorog==}
+  /appwrite@14.0.0:
+    resolution: {integrity: sha512-8X0wbA0JX51f2DVSbpYTV2fN5f6vSGYpWBVSXCKfnNPMiBgeBwcDxuLDxnHUApAsSIDUkfZomeJWE8Q2Rbnpbw==}
     dependencies:
       cross-fetch: 3.1.5
       isomorphic-form-data: 2.0.0
