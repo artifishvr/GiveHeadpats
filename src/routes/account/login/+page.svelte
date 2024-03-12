@@ -11,7 +11,7 @@
 
     async function login(email) {
         if (!emailRegex.test(email)) return alert('Please enter a valid email address.');
-        await account.createMagicURLSession(ID.unique(), email, `${PUBLIC_HOST}/account/verify`);
+        await account.createEmailToken(ID.unique(), email, `${PUBLIC_HOST}/account/verify`);
         popupModal = true;
     }
 </script>

@@ -14,7 +14,7 @@
         const secret = urlParams.get('secret');
         const userId = urlParams.get('userId');
 
-        user = await account.updateMagicURLSession(userId, secret);
+        user = await account.createSession(userId, secret);
         console.log(user);
 
         const userdata = await databases.listDocuments(PUBLIC_HEADPATDB, PUBLIC_COLLECTION_USERDATA, [
