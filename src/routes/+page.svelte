@@ -1,60 +1,8 @@
 <script>
-    import { databases } from '$lib/appwrite';
-    import { Query } from 'appwrite';
     import { env } from '$env/dynamic/public';
     import { Heading, P, Button } from 'flowbite-svelte';
     import { ArrowRightOutline } from 'flowbite-svelte-icons';
-
-    let mostpatted = [];
-    let newusers = [];
-
-    const mostpattedResponse = databases.listDocuments(env.PUBLIC_HEADPATDB, env.PUBLIC_COLLECTION_USERDATA, [
-        Query.orderDesc('PatsReceived'),
-        Query.limit(4),
-    ]);
-
-    mostpattedResponse.then(
-        function (response) {
-            mostpatted = response.documents;
-
-            if (mostpatted.length < 4) {
-                for (let i = mostpatted.length; i < 4; i++) {
-                    mostpatted.push({
-                        PatsReceived: 0,
-                        user: 'No one yet!',
-                        hideButton: true,
-                    });
-                }
-            }
-        },
-        function (error) {
-            console.log(error);
-        },
-    );
-
-    const newusersResponse = databases.listDocuments(env.PUBLIC_HEADPATDB, env.PUBLIC_COLLECTION_USERDATA, [
-        Query.orderDesc('$createdAt'),
-        Query.limit(4),
-    ]);
-
-    newusersResponse.then(
-        function (response) {
-            newusers = response.documents;
-
-            if (newusers.length < 4) {
-                for (let i = newusers.length; i < 4; i++) {
-                    newusers.push({
-                        PatsReceived: 0,
-                        user: 'No one yet!',
-                        hideButton: true,
-                    });
-                }
-            }
-        },
-        function (error) {
-            console.log(error);
-        },
-    );
+    export let data;
 </script>
 
 <svelte:head>
@@ -72,7 +20,7 @@
     <Heading tag="h3" class="mb-4 text-center" customSize="text-2xl font-bold md:text-2xl lg:text-2xl">Most Patted</Heading>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto max max-w-7xl mt-10 px-4 sm:px-6 mb-8">
-        {#each mostpatted as patted}
+        {#each data.mostpatted as patted}
             <div class="bg-white dark:bg-slate-900 p-4 rounded-lg drop-shadow-sm">
                 <Heading tag="h2" class="mb-4" customSize="text-md font-bold md:text-md lg:text-md">{patted.user}</Heading>
                 <P class="mb-6 text-sm lg:text-sm dark:text-gray-400 text-center"
@@ -91,7 +39,7 @@
     <Heading tag="h3" class="mb-4 text-center" customSize="text-2xl font-bold md:text-2xl lg:text-2xl">New Users</Heading>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto max max-w-7xl mt-10 px-4 sm:px-6 mb-24">
-        {#each newusers as patted}
+        {#each data.newusers as patted}
             <div class="bg-white dark:bg-slate-900 p-4 rounded-lg drop-shadow-sm">
                 <Heading tag="h2" class="mb-4" customSize="text-md font-bold md:text-md lg:text-md">{patted.user}</Heading>
                 <P class="mb-6 text-sm lg:text-sm dark:text-gray-400 text-center"
