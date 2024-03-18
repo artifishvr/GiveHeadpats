@@ -21,7 +21,6 @@
     import { account } from '$lib/appwrite';
     import { dev, version } from '$app/environment';
     import { inject } from '@vercel/analytics';
-    import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
     import { page } from '$app/stores';
     import { onMount } from 'svelte';
 
@@ -47,7 +46,6 @@
     );
 
     inject({ mode: dev ? 'development' : 'production' });
-    injectSpeedInsights();
 
     onMount(() => {
         console.log('hiiiiii :3');
