@@ -38,8 +38,8 @@ devDependencies:
     specifier: ^0.44.24
     version: 0.44.24(svelte@4.2.12)
   flowbite-svelte-icons:
-    specifier: ^1.4.3
-    version: 1.4.3(svelte@4.2.12)(tailwind-merge@2.2.1)(tailwindcss@3.4.1)
+    specifier: ^1.4.5
+    version: 1.4.5(svelte@4.2.12)(tailwind-merge@2.2.1)(tailwindcss@3.4.1)
   postcss:
     specifier: ^8.4.36
     version: 8.4.36
@@ -918,8 +918,8 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /flowbite-svelte-icons@1.4.3(svelte@4.2.12)(tailwind-merge@2.2.1)(tailwindcss@3.4.1):
-    resolution: {integrity: sha512-SNxTHPsWnynsy6SLr5nC0YRLmP3FRfl/LS1ozyx7vNraGwa2AP+23DX4pPrhVauBhoSWUAyzaM2ZbpscS2aGVQ==}
+  /flowbite-svelte-icons@1.4.5(svelte@4.2.12)(tailwind-merge@2.2.1)(tailwindcss@3.4.1):
+    resolution: {integrity: sha512-NLXcRTvp84NYbrb+csqYvKfOt2dfFjS8KvFebUEz4EhP6IBEe2mSNbl+faCZ2EIJOMmfRtyhk1Rx2wwsAIx/1Q==}
     peerDependencies:
       svelte: ^3.54.0 || ^4.0.0 || ^5.0.0
       tailwind-merge: ^2.0.0
@@ -1600,6 +1600,7 @@ packages:
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
+    dev: true
 
   /source-map-js@1.1.0:
     resolution: {integrity: sha512-9vC2SfsJzlej6MAaMPLu8HiBSHGdRAJ9hVFYN1ibZoNkeanmDmLUcIrj6G9DGL7XMJ54AKg/G75akXl1/izTOw==}
