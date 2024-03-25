@@ -26,7 +26,7 @@
     "@vercel/analytics": "^1.2.2",
     "appwrite": "^14.0.0",
     "node-appwrite": "^12.0.0",
-    "sanitize-html": "^2.12.1",
+    "sanitize-html": "^2.13.0",
     "svelte-gestures": "^4.0.0"
   }
 }
