@@ -1,15 +1,13 @@
 <script>
     import { Toast } from 'flowbite-svelte';
-      import { fly } from 'svelte/transition';
+    import { blur } from 'svelte/transition';
 
-    import { CloseCircleSolid } from 'flowbite-svelte-icons';
     export let text = 'Error';
     export let show = false;
 </script>
 
-<Toast color="red" transition={fly} params={{ x: 200 }} bind:show>
+<Toast color="red" transition={blur} params={{ amount: 10 }} bind:show position="top-right">
     <svelte:fragment slot="icon">
-        <CloseCircleSolid class="w-5 h-5" />
         <span class="sr-only">Error icon</span>
     </svelte:fragment>
     {text}

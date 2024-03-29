@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import { press } from 'svelte-gestures';
 	import sanitizeHtml from 'sanitize-html';
+	import ErrorToast from '$lib/ErrorToast.svelte';
 
 	export let data;
 
@@ -15,6 +16,9 @@
 	let patcount = 1;
 
 	let headpatModal = false;
+
+	let isError = false;
+	let errorMessage = '';
 
 	let actor = '';
 
@@ -30,6 +34,11 @@
 			avatar: avatars.getInitials(pat.actor),
 		});
 	});
+
+	function showError(message) {
+		isError = true;
+		errorMessage = message;
+	}
 
 	async function patpat() {
 		headpatModal = false;
@@ -49,7 +58,7 @@
 
 		let responseJSON = await response.json();
 
-		if (responseJSON.status !== 200) return alert(responseJSON.response);
+		if (responseJSON.status !== 200) return showError(responseJSON.response);
 
 		headpats = responseJSON.response;
 		activities = activities.unshift({
@@ -103,6 +112,8 @@
 	<meta content={avatarlink} property="og:image" />
 	<meta content="#00d64b" data-react-helmet="true" name="theme-color" />
 </svelte:head>
+
+<ErrorToast text="Error" bind:show={isError} />
 
 <div class="bg-white dark:bg-slate-900 gap-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 p-4 rounded-lg drop-shadow-md mb-10">
 	<Avatar src={avatarlink} size="lg" />
