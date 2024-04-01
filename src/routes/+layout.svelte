@@ -50,6 +50,11 @@
     onMount(() => {
         console.log('hiiiiii :3');
         console.log("if you know what you're doing here, come contribute at https://github.com/artificialbutter/GiveHeadpats c:");
+        const analyticsScript = document.createElement('script');
+        analyticsScript.defer = true;
+        analyticsScript.dataset.domain = 'pat.arti.lol';
+        analyticsScript.src = 'https://a.arti.lol/js/script.js';
+        document.head.appendChild(analyticsScript);
     });
 </script>
 
