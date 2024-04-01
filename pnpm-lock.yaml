@@ -12,8 +12,8 @@ dependencies:
     specifier: ^14.0.0
     version: 14.0.0
   node-appwrite:
-    specifier: ^12.0.0
-    version: 12.0.0
+    specifier: ^12.0.1
+    version: 12.0.1
   sanitize-html:
     specifier: ^2.13.0
     version: 2.13.0
@@ -1273,8 +1273,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  /node-appwrite@12.0.0:
-    resolution: {integrity: sha512-tvfwxpabSrX+6+vNQbjqkdZI2G4c/Yg7Dx3gEGhsYmO00876IbhH0TVR7DaW+4uqgVuBaavbEBf9oinAWS8oeQ==}
+  /node-appwrite@12.0.1:
+    resolution: {integrity: sha512-2YHjh6gKe5oyFG4E4bnIz7zPEU456PYE6vCJerqGEgXD5xS5B4ToFFEvtYM6Vk3Q7XSWMqXo2sQJIXkT+MSD7A==}
     dependencies:
       undici: 5.28.3
     dev: false
