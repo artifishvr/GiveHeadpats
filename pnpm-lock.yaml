@@ -35,8 +35,8 @@ devDependencies:
     specifier: ^2.3.0
     version: 2.3.0
   flowbite-svelte:
-    specifier: ^0.44.24
-    version: 0.44.24(svelte@4.2.14)
+    specifier: ^0.46.0
+    version: 0.46.0(svelte@4.2.14)
   flowbite-svelte-icons:
     specifier: ^1.5.0
     version: 1.5.0(svelte@4.2.14)(tailwind-merge@2.2.1)(tailwindcss@3.4.3)
@@ -76,6 +76,13 @@ packages:
 
   /@babel/runtime@7.23.8:
     resolution: {integrity: sha512-Y7KbAP984rn1VGMbGqKmBLio9V7y5Je9GvU4rQPCPinCyNfUcToxIXl06d59URp/F3LwinvODxab5N/G6qggkw==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.14.0
+    dev: true
+
+  /@babel/runtime@7.24.4:
+    resolution: {integrity: sha512-dkxf7+hn8mFBwKjs9bvBlArzLVxVbS8usaPUDd5p2a9JCL9tB8OaOVN1isD4+Xyk4ns89/xeOmbQvgdK7IIVdA==}
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.0
@@ -545,8 +552,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /apexcharts@3.46.0:
-    resolution: {integrity: sha512-ELAY6vj8JQD7QLktKasTzwm9Wt0qxqfQSo+3QWS7G7I774iK8HCkG1toGsqJH0mkK6PtYBtnSIe66uUcwoCw1w==}
+  /apexcharts@3.49.0:
+    resolution: {integrity: sha512-2T9HnbQFLCuYRPndQLmh+bEQFoz0meUbvASaGgiSKDuYhWcLBodJtIpKql2aOtMx4B/sHrWW0dm90HsW4+h2PQ==}
     dependencies:
       '@yr/monotone-cubic-spline': 1.0.3
       svg.draggable.js: 2.2.2
@@ -930,17 +937,17 @@ packages:
       tailwindcss: 3.4.3
     dev: true
 
-  /flowbite-svelte@0.44.24(svelte@4.2.14):
-    resolution: {integrity: sha512-kXhJZHGpBVq5RFOoYnzRCEM8eFa81DVp4KjUbBsLJptKhizbSSBJuYApWIQb9pBCS8EBhX4PAX+RsgEDZfEqtA==}
+  /flowbite-svelte@0.46.0(svelte@4.2.14):
+    resolution: {integrity: sha512-Qw4zX4nCbxP5ZemksC9/EVGE9WRnD8FsR5CrdZRxm1RGkMOv2nrKxDQ8MXHF/GwdEutFU5UeaQncQuqgY5DoVg==}
     engines: {node: '>=18.0.0', pnpm: '>=8.0.0'}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
       '@floating-ui/dom': 1.6.3
-      apexcharts: 3.46.0
+      apexcharts: 3.49.0
       flowbite: 2.3.0
       svelte: 4.2.14
-      tailwind-merge: 2.2.1
+      tailwind-merge: 2.3.0
     dev: true
 
   /flowbite@2.3.0:
@@ -1742,6 +1749,12 @@ packages:
     resolution: {integrity: sha512-o+2GTLkthfa5YUt4JxPfzMIpQzZ3adD1vLVkvKE1Twl9UAhGsEbIZhHHZVRttyW177S8PDJI3bTQNaebyofK3Q==}
     dependencies:
       '@babel/runtime': 7.23.8
+    dev: true
+
+  /tailwind-merge@2.3.0:
+    resolution: {integrity: sha512-vkYrLpIP+lgR0tQCG6AP7zZXCTLc1Lnv/CCRT3BqJ9CZ3ui2++GPaGb1x/ILsINIMSYqqvrpqjUFsMNLlW99EA==}
+    dependencies:
+      '@babel/runtime': 7.24.4
     dev: true
 
   /tailwindcss@3.4.3:
