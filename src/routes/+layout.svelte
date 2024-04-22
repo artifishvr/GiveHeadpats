@@ -49,7 +49,7 @@
 
     onMount(() => {
         console.log('hiiiiii :3');
-        console.log("if you know what you're doing here, come contribute at https://github.com/artificialbutter/GiveHeadpats c:");
+        console.log("if you know what you're doing here, come contribute at https://github.com/artifishvr/GiveHeadpats c:");
         const analyticsScript = document.createElement('script');
         analyticsScript.defer = true;
         analyticsScript.dataset.domain = 'pat.arti.lol';
@@ -63,7 +63,7 @@
         <NavBrand href="/">
             <img src="/icon.webp" class="me-3 h-6 sm:h-9" alt="Headpats Icon" />
             <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Give Headpats</span>
-            <a href="https://github.com/artificialbutter/GiveHeadpats" target="_blank">
+            <a href="https://github.com/artifishvr/GiveHeadpats" target="_blank">
                 <span class="ml-2 px-3 py-2 rounded-full bg-red-200 text-red-800 font-semibold">Open Alpha</span>
                 <Tooltip type="light" placement="right">v{version}</Tooltip>
             </a>
