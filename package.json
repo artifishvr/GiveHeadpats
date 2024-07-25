@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-vercel": "^3.1.0",
-    "@sveltejs/kit": "^1.30.4",
+    "@sveltejs/kit": "^2.0.0",
     "autoprefixer": "^10.4.19",
     "flowbite": "^2.3.0",
     "flowbite-svelte": "^0.46.1",
