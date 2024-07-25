@@ -18,8 +18,8 @@ importers:
         specifier: ^2.13.0
         version: 2.13.0
       svelte-gestures:
-        specifier: ^4.0.0
-        version: 4.0.0
+        specifier: ^5.0.0
+        version: 5.0.4
     devDependencies:
       '@sveltejs/adapter-vercel':
         specifier: ^3.1.0
@@ -1346,8 +1346,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  svelte-gestures@4.0.0:
-    resolution: {integrity: sha512-YrryRlKGY2CJm3AtEjFt9+RdQ7/pqNio4O7Apb9ed6oMBEkd6BFoOuv9mBApAEBIx08+iBDXQujbYCvakGePPw==}
+  svelte-gestures@5.0.4:
+    resolution: {integrity: sha512-a6cnR46AfFZ8zZyvA38A1wBLBFI7rYuAWQnmv3yYgSdbaJK/U7JG34rSkjMCePRvf4BETJSDfMNngLs5zEAfbw==}
 
   svelte-hmr@0.15.3:
     resolution: {integrity: sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==}
@@ -2697,7 +2697,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-gestures@4.0.0: {}
+  svelte-gestures@5.0.4: {}
 
   svelte-hmr@0.15.3(svelte@4.2.18):
     dependencies:
