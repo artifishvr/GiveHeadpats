@@ -12,8 +12,8 @@ importers:
         specifier: ^14.0.1
         version: 14.0.1
       node-appwrite:
-        specifier: ^12.0.1
-        version: 12.0.1
+        specifier: ^13.0.0
+        version: 13.0.0
       sanitize-html:
         specifier: ^2.13.0
         version: 2.13.0
@@ -1086,8 +1086,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  node-appwrite@12.0.1:
-    resolution: {integrity: sha512-2YHjh6gKe5oyFG4E4bnIz7zPEU456PYE6vCJerqGEgXD5xS5B4ToFFEvtYM6Vk3Q7XSWMqXo2sQJIXkT+MSD7A==}
+  node-appwrite@13.0.0:
+    resolution: {integrity: sha512-O1g1RWcRYcvnVvR0Dykjoe/4UcL6ELVvZosb4B8/hhNvleuWfN2fOFxzeCaU8amGW6UtVtZqvNaUT3IF1mPBdA==}
+
+  node-fetch-native-with-agent@1.7.2:
+    resolution: {integrity: sha512-5MaOOCuJEvcckoz7/tjdx1M6OusOY6Xc5f459IaruGStWnKzlI1qpNgaAwmn4LmFYcsSlj+jBMk84wmmRxfk5g==}
 
   node-fetch@2.6.7:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
@@ -2451,9 +2454,11 @@ snapshots:
 
   nanoid@3.3.7: {}
 
-  node-appwrite@12.0.1:
+  node-appwrite@13.0.0:
     dependencies:
-      undici: 5.28.4
+      node-fetch-native-with-agent: 1.7.2
+
+  node-fetch-native-with-agent@1.7.2: {}
 
   node-fetch@2.6.7:
     dependencies:
