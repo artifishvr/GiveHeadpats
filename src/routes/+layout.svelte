@@ -16,8 +16,9 @@
     Dropdown,
     DropdownItem,
     DropdownDivider,
+    Modal,
   } from "flowbite-svelte";
-  import { ChevronDownOutline } from "flowbite-svelte-icons";
+  import { ChevronDownOutline, TableRowOutline } from "flowbite-svelte-icons";
   import { account } from "$lib/appwrite";
   import { version } from "$app/environment";
   import { page } from "$app/stores";
@@ -55,6 +56,8 @@
     analyticsScript.src = "https://a.arti.lol/js/script.js";
     document.head.appendChild(analyticsScript);
   });
+
+  let headpatModal = true;
 </script>
 
 {#if pagePath !== "/account/verify"}
@@ -103,6 +106,20 @@
 {/if}
 
 <div class="p-4 md:p-8 bg-gray-50 dark:bg-slate-950 h-100 min-h-screen">
+  <Modal bind:open={headpatModal} dismissable={false} class="text-center">
+    <div class="text-center">
+      <h1 class="text-white text-2xl font-bold">
+        Give Headpats is on hiatus for the time being, awaiting a full rebuild.
+      </h1>
+      <br />
+      <p class="text-white">
+        Keep an eye on <a
+          href="https://github.com/artifishvr/GiveHeadpats"
+          target="_blank"
+          class="text-blue-300">the repo</a> for updates.
+      </p>
+    </div></Modal>
+
   <slot />
 </div>
 
