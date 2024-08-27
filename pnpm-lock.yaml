@@ -12,8 +12,8 @@ importers:
         specifier: ^14.0.1
         version: 14.0.1
       node-appwrite:
-        specifier: ^12.0.1
-        version: 12.0.1
+        specifier: ^14.0.0
+        version: 14.0.0
       sanitize-html:
         specifier: ^2.13.0
         version: 2.13.0
@@ -208,10 +208,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
-
-  '@fastify/busboy@2.1.0':
-    resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
-    engines: {node: '>=14'}
 
   '@floating-ui/core@1.6.5':
     resolution: {integrity: sha512-8GrTWmoFhm5BsMZOTHeGD2/0FLKLQQHvO/ZmQga4tKempYRLz8aqJGqXVuQgisnMObq2YZ2SgkwctN1LOOxcqA==}
@@ -949,8 +945,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  node-appwrite@12.0.1:
-    resolution: {integrity: sha512-2YHjh6gKe5oyFG4E4bnIz7zPEU456PYE6vCJerqGEgXD5xS5B4ToFFEvtYM6Vk3Q7XSWMqXo2sQJIXkT+MSD7A==}
+  node-appwrite@14.0.0:
+    resolution: {integrity: sha512-pPynEAmhep1rNHpv2UqsZfM7FbtDX7y+nRRZS/IP5CMDznMu8PBqzFD2WbbQIvVCv3MEDRY5xpXbPfyxbysCPQ==}
+
+  node-fetch-native-with-agent@1.7.2:
+    resolution: {integrity: sha512-5MaOOCuJEvcckoz7/tjdx1M6OusOY6Xc5f459IaruGStWnKzlI1qpNgaAwmn4LmFYcsSlj+jBMk84wmmRxfk5g==}
 
   node-fetch@2.6.7:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
@@ -1306,10 +1305,6 @@ packages:
   turnstile-types@1.2.1:
     resolution: {integrity: sha512-PZFcUDFvPvmmwb885JA/N+8Pg5xNWw/UGMABRb/vI9P8cZ4pLDCpBDzgw7oKQ67DYvboTxNhfTAu93gjX4uNbQ==}
 
-  undici@5.28.4:
-    resolution: {integrity: sha512-72RFADWFqKmUb2hmmvNODKL3p9hcB6Gt2DOQMis1SEBaV6a4MH8soBvzg+95CYhCKPFedut2JY9bMfrDl9D23g==}
-    engines: {node: '>=14.0'}
-
   update-browserslist-db@1.1.0:
     resolution: {integrity: sha512-EdRAaAyk2cUE1wOf2DkEhzxqOQvFOoRJFNS6NeyJ01Gp2beMRpBAINjM2iDXE3KCuKhwnvHIQCJm6ThL2Z+HzQ==}
     hasBin: true
@@ -1468,8 +1463,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
-
-  '@fastify/busboy@2.1.0': {}
 
   '@floating-ui/core@1.6.5':
     dependencies:
@@ -2220,9 +2213,11 @@ snapshots:
 
   nanoid@3.3.7: {}
 
-  node-appwrite@12.0.1:
+  node-appwrite@14.0.0:
     dependencies:
-      undici: 5.28.4
+      node-fetch-native-with-agent: 1.7.2
+
+  node-fetch-native-with-agent@1.7.2: {}
 
   node-fetch@2.6.7:
     dependencies:
@@ -2587,10 +2582,6 @@ snapshots:
   ts-interface-checker@0.1.13: {}
 
   turnstile-types@1.2.1: {}
-
-  undici@5.28.4:
-    dependencies:
-      '@fastify/busboy': 2.1.0
 
   update-browserslist-db@1.1.0(browserslist@4.23.3):
     dependencies:
